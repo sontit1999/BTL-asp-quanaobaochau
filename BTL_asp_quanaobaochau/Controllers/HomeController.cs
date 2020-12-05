@@ -26,5 +26,10 @@ namespace BTL_asp_quanaobaochau.Controllers
 
             return View();
         }
+        public ActionResult DatHang()
+        {
+            ViewBag.Message = " Đặt Hàng";
+            return View();
+        }
     }
 }

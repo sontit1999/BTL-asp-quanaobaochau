@@ -76,3 +76,4 @@ G:\Project C#\BTL_asp_quanaobaochau\BTL_asp_quanaobaochau\obj\Debug\BTL_asp_quan
 G:\Project C#\BTL_asp_quanaobaochau\BTL_asp_quanaobaochau\obj\Debug\BTL_asp_quanaobaochau.csproj.CopyComplete
 G:\Project C#\BTL_asp_quanaobaochau\BTL_asp_quanaobaochau\obj\Debug\BTL_asp_quanaobaochau.dll
 G:\Project C#\BTL_asp_quanaobaochau\BTL_asp_quanaobaochau\obj\Debug\BTL_asp_quanaobaochau.pdb
+G:\Project C#\BTL_asp_quanaobaochau\BTL_asp_quanaobaochau\obj\Debug\BTL_asp_quanaobaochau.csprojAssemblyReference.cache

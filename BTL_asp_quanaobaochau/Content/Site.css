@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+   
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -25,14 +26,6 @@ textarea {
 ul {
     list-style-type: none
 }
-
-.topmenu ul li {
-    display: inline-block;
-    padding: 5px 10px;
+.redtext{
+    color: red;
 }
-
-    .topmenu ul li a {
-        color: white;
-        background-color: hotpink;
-        padding: 5px 10px;
-    }

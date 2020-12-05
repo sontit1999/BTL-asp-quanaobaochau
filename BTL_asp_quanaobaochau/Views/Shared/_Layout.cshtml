@@ -19,9 +19,10 @@
     <META NAME="classification" CONTENT="Quần áo Bảo Châu quần áo trẻ em xuất khẩu bán giá sỉ, thời trang trẻ em xuất khẩu đảm bảo giá tốt hỗ trợ 24/7 quan ao bao chau 13 năm kinh nghiệm">
     <META NAME="Search Engines" CONTENT=" www.google.com.vn,  www.google.com. www.google.com.vn, www.altaVista.com, www.aol.com, www.infoseek.com, www.excite.com, www.hotbot.com, www.lycos.com, www.magellan.com, www.looksmart.com, www.cnet.com, www.voila.com, www.google.fr, www.google.com, www.google.com.vn, www.yahoo.fr, www.yahoo.com, www.alltheweb.com, www.msn.com, www.netscape.com, www.nomade.com, " />
     <link href="favicon.ico" rel="shortcut icon" />
-    <!--
-    <link href="~/Views/Shared/css/style_chuan.css" rel="stylesheet" />
-    <link href="~/Views/Shared/styles/style_002/style_001.css" rel="stylesheet" /> -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <style>
         .contentstyle {
             width: auto;
@@ -33,7 +34,7 @@
 
             #ddtabs ul li a {
                 display: block;
-                padding: 5px 10px;
+                padding: 5px 7px;
                 background-color: hotpink;
                 color: white;
             }
@@ -94,28 +95,28 @@
                         <td align="left" valign="middle" height="0" class="bg_top_2">
                             <div style="width:100%;padding:10px;">
                                 @* đặt ảnh banner ở đây*@
-                                <img style="width:100%; height:150px;" src="https://sites.google.com/site/shopbaochau01678382017/_/rsrc/1534323646385/home/BANNER-THOI-TRANG-TRE-EM.png" />
+                                <img style="width:100%; height:auto;" src="https://minhminhfashion.com/wp-content/uploads/2019/11/1280x510-banner-minhminh-chuyen-si.png" />
                             </div>
                             <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td align="right" valign="middle" height="0">
                                         <div id="ddtabs" class="menu">
                                             <ul>
-                                                <li><a href="index.html"><span>Trang chủ</span></a></li>
+                                                <li>@Html.ActionLink("Trang chủ", "Index", "Home")</li>
                                                 <u class=menu_center><b></b></u>                                             
-                                                <li><a href="dat-hang/dat-hang-bao-chau-vn-p-24925-0.html"><span>Đặt hàng</span></a></li>
+                                                <li>@Html.ActionLink("Đặt hàng", "DatHang", "Home")</li>
                                                 <u class=menu_center><b></b></u>
-                                                <li><a href="quan-ao-be-trai-vn-12-0.html"><span>Thời Trang Bé Trai</span></a></li>
+                                                <li>@Html.ActionLink("Thời Trang Bé Trai", "About", "Home")</li>
                                                 <u class=menu_center><b></b></u>
-                                                <li><a href="quan-ao-be-gai-vn-32-0.html"><span>Thời trang bé gái</span></a></li>
+                                                <li>@Html.ActionLink("Thời Trang Bé Gái", "Contact", "Home")</li>
                                                 <u class=menu_center><b></b></u>
-                                                <li><a href="quan-ao-quang-chau-vn-38-0.html"><span>Quần áo Quảng Châu</span></a></li>
+                                                <li>@Html.ActionLink("Quần áo quảng châu", "Index", "Home")</li>
                                                 <u class=menu_center><b></b></u>
-                                                <li><a href="kinh-nghiem-quan-ao-tre-em-vn-35-0.html"><span>Kinh nghiệm</span></a></li>
+                                                <li>@Html.ActionLink("Kinh Nghiệm", "Index", "Home")</li>
                                                 <u class=menu_center><b></b></u>
-                                                <li><a href="tin-tuc-vn-3-0.html"><span>Tin tức</span></a></li>
+                                                <li>@Html.ActionLink("Tin tức", "Index", "Home")</li>
                                                 <u class=menu_center><b></b></u>
-                                                <li><a href="quan-ao-tre-em-xuat-khau-vn-30-0.html"><span>Sản Phẩm Khác</span></a></li>
+                                                <li>@Html.ActionLink("Sản phẩm khác", "Index", "Home")</li>
                                                 <u class=menu_center><b></b></u>
                                                 <div id="gc1"></div>
                                                 <div id="gc2"></div>
@@ -324,7 +325,7 @@
                                     <td align="center" valign="top" style="padding-bottom: 8px;"><img src="https://pbs.twimg.com/profile_images/980286583050915840/WLnkg2ZD.jpg" class="border_images" border=1 width="150"></td>
                                 </tr>
                                 <tr>
-                                    <td align="center" valign="top" style="padding-bottom: 8px;"><img src="https://lh3.googleusercontent.com/proxy/QdFHLoxpiyA8fGF3CNjPzYnk1S8D4Jf2Ls01ILZkqQ8ULmiyw3iP1a2V81yE8Rg6_uWCxA76rJlk7R2xRjH-QL39mMtPFfRaI-11Y0C2yHkp4hYO_7cyFoIRcgqyHkM5k0aXu5rtaED5ttLtej40iRJIPqM" class="border_images" border=1 width="150"></td>
+                                    <td align="center" valign="top" style="padding-bottom: 8px;"><img src="https://cf.shopee.vn/file/a2882174e94f9031218a40c47c517105" class="border_images" border=1 width="150"></td>
                                 </tr>
                                 <tr>
                                     <td align="center" valign="top" style="padding-bottom: 8px;"><img src="https://sites.google.com/site/bansiquanaotreemxuatkhautphcm/_/rsrc/1535518971564/tai-sao-mua-quan-ao-tre-em-gia-si-tai-bao-chau/tai-sao-mua-quan-ao-tre-em-gia-si-tai-bao-chau-6.jpg" class="border_images" border=1 width="150"></td>
@@ -372,7 +373,7 @@
                                                 <td valign="top" class="block_2_center">
                                                     <table>
                                                         <tr>
-                                                            <td width="15%" align="center"><a href="b-vn-62-0/gio-hang/xem-gio-hang.html"><img width="25" height="25" align="absmiddle" src="https://lh3.googleusercontent.com/proxy/VHIl3Ib-qL2bkhlvzoL0J_yOPFmXwtiNu4D6xCWtZ-MMp5V1BIBLhggnhpFRRKutoaPT03IG6iIYjdA" border="0" /></a></td>
+                                                            <td width="15%" align="center"><a href="b-vn-62-0/gio-hang/xem-gio-hang.html"><img width="25" height="25" align="absmiddle" src="https://e7.pngegg.com/pngimages/81/559/png-clipart-shopping-cart-software-computer-icons-shopping-cart-text-retail-thumbnail.png" border="0" /></a></td>
                                                             <td width="80%" height="25" class="cart">[ 0 ] <a href=b-vn-62-0/gio-hang/xem-gio-hang.html>Xem giỏ hàng</a> </td>
                                                         </tr>
                                                         <tr>
