@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTL_asp_quanaobaochau", "BTL_asp_quanaobaochau\BTL_asp_quanaobaochau.csproj", "{961638A8-6EA1-4D9A-BAD3-9C0BC8A1F7B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{961638A8-6EA1-4D9A-BAD3-9C0BC8A1F7B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{961638A8-6EA1-4D9A-BAD3-9C0BC8A1F7B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{961638A8-6EA1-4D9A-BAD3-9C0BC8A1F7B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{961638A8-6EA1-4D9A-BAD3-9C0BC8A1F7B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E240FABB-57B1-48FA-88F7-CE38D7EAB48A}
+	EndGlobalSection
+EndGlobal
