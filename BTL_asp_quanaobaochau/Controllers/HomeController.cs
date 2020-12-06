@@ -10,6 +10,8 @@ namespace BTL_asp_quanaobaochau.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.online = 123;
+            ViewBag.totalvisit = 456789;
             return View();
         }
 

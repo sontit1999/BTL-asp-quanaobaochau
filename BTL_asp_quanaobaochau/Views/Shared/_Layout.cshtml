@@ -1,4 +1,8 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+﻿@{ 
+    var sokhachonline = ViewBag.online;
+    var tongtruycap = ViewBag.totalvisit;
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8 " />
     <title>Quần áo trẻ em Bảo Châu, Thời Trang trẻ em xuất khẩu giá sỉ </title>
@@ -22,7 +26,7 @@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/Site.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         .contentstyle {
             width: auto;
@@ -74,6 +78,9 @@
             padding: 5px 10px;
             color: white;
         }
+        .mySlides {
+            display: none;
+        }
     </style>
 </head>
 <body topmargin="0" bottommargin="0" rightmargin="0" leftmargin="0">
@@ -95,7 +102,7 @@
                         <td align="left" valign="middle" height="0" class="bg_top_2">
                             <div style="width:100%;padding:10px;">
                                 @* đặt ảnh banner ở đây*@
-                                <img style="width:100%; height:auto;" src="https://minhminhfashion.com/wp-content/uploads/2019/11/1280x510-banner-minhminh-chuyen-si.png" />
+                                <img style="width:100%; height:auto;" src="https://thumbs.dreamstime.com/b/black-friday-sale-template-horizontal-banner-hand-drawn-fashion-models-copy-space-new-collection-clothes-black-friday-106319340.jpg" />
                             </div>
                             <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
                                 <tr>
@@ -112,8 +119,7 @@
                                                 <u class=menu_center><b></b></u>
                                                 <li>@Html.ActionLink("Quần áo quảng châu", "Index", "Home")</li>
                                                 <u class=menu_center><b></b></u>
-                                                <li>@Html.ActionLink("Kinh Nghiệm", "Index", "Home")</li>
-                                                <u class=menu_center><b></b></u>
+                                               
                                                 <li>@Html.ActionLink("Tin tức", "Index", "Home")</li>
                                                 <u class=menu_center><b></b></u>
                                                 <li>@Html.ActionLink("Sản phẩm khác", "Index", "Home")</li>
@@ -343,13 +349,13 @@
                                                 <td height="20" align="center" valign="middle" class="tab_5_5">Lượt truy cập:</td>
                                             </tr>
                                             <tr>
-                                                <td height="20" align="center" valign="middle" class="tab_5_5"><b>12678728</b></td>
+                                                <td height="20" align="center" valign="middle" class="tab_5_5"><b>@tongtruycap</b></td>
                                             </tr>
                                             <tr>
                                                 <td height="20" align="center" valign="middle" class="tab_5_5">Khách Online:</td>
                                             </tr>
                                             <tr>
-                                                <td height="20" align="center" valign="middle" class="tab_5_5"><b>10 </b></td>
+                                                <td height="20" align="center" valign="middle" class="tab_5_5"><b>@sokhachonline </b></td>
                                             </tr>
                                         </table>
                                     </td>
@@ -367,6 +373,29 @@
                                     <td width="198" valign="top" class="bg_right">
                                         <table class="block_2_top" cellspacing=0 cellpadding=0 width="200" border=0>
                                             <tr>
+                                                <td valign="middle" class="tab_8_8 block_2_title">Tìm kiếm</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top" class="block_2_center">
+                                                    <table>
+                                                        <tr>
+                                                            <td width="100%" align="center">
+                                                                <div class="input-group mb-3 mt-2">
+                                                                    <input type="text" class="form-control" placeholder="bạn muốn tìm gì ?" aria-label="what ?" aria-describedby="basic-addon2">
+                                                                    <div class="input-group-append">
+                                                                        <button class="btn btn-outline-secondary" type="button">Tìm ngay</button>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            
+                                                        </tr>
+                                                       
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table class="block_2_top" cellspacing=0 cellpadding=0 width="200" border=0>
+                                            <tr>
                                                 <td valign="middle" class="tab_8_8 block_2_title">Giỏ hàng</td>
                                             </tr>
                                             <tr>
@@ -376,10 +405,7 @@
                                                             <td width="15%" align="center"><a href="b-vn-62-0/gio-hang/xem-gio-hang.html"><img width="25" height="25" align="absmiddle" src="https://e7.pngegg.com/pngimages/81/559/png-clipart-shopping-cart-software-computer-icons-shopping-cart-text-retail-thumbnail.png" border="0" /></a></td>
                                                             <td width="80%" height="25" class="cart">[ 0 ] <a href=b-vn-62-0/gio-hang/xem-gio-hang.html>Xem giỏ hàng</a> </td>
                                                         </tr>
-                                                        <tr>
-                                                            <td width="15%" align="center"><a href="b-vn-68-0/gio-hang/xoa-gio-hang.html"><img width="25" height="25" align="absmiddle" src="https://www.freeiconspng.com/uploads/remove-icon-png-15.png" border="0" /></a></td>
-                                                            <td width="80%" height="25" class="cart"><a href=b-vn-68-0/gio-hang/xoa-gio-hang.html>Xóa giỏ hàng</a> </td>
-                                                        </tr>
+                                                       
                                                     </table>
                                                 </td>
                                             </tr>
@@ -405,10 +431,13 @@
                                                                     <tbody>
                                                                         <tr>
                                                                             <td>
-                                                                               
+
                                                                                 <span style="color: rgb(255, 0, 0);">
-                                                                                    <p>&nbsp;<span style="font-size: x-small;">
-                                                                                        <span style="FONT-SIZE: small">Hotline 1:&nbsp;</span> </span><span style="font-size: large;"><span style="FONT-WEIGHT: bold"><span style="COLOR: rgb(51,102,255)">0945.524.726</span></span></span></p>
+                                                                                    <p>
+                                                                                        &nbsp;<span style="font-size: x-small;">
+                                                                                            <span style="FONT-SIZE: small">Hotline 1:&nbsp;</span>
+                                                                                        </span><span style="font-size: large;"><span style="FONT-WEIGHT: bold"><span style="COLOR: rgb(51,102,255)">0945.524.726</span></span></span>
+                                                                                    </p>
                                                                                 </span>
                                                                                 <p>
                                                                                     <span style="FONT-SIZE: x-small"><span style="FONT-SIZE: small">Hotline 2</span></span><span style="FONT-SIZE: small">:&nbsp;</span> <span style="FONT-WEIGHT: bold">
