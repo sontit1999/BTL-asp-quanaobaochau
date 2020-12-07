@@ -12,6 +12,7 @@ namespace BTL_asp_quanaobaochau.Controllers
         {   
             // comment test to Lê nam
             // comment by le nam
+            //comment 3
             ViewBag.online = 123;
             ViewBag.totalvisit = 456789;
             return View();
