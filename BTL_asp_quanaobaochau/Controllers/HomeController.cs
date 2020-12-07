@@ -8,6 +8,7 @@ namespace BTL_asp_quanaobaochau.Controllers
 {
     public class HomeController : Controller
     {
+        // hello Sơn tít
         public ActionResult Index()
         {   
             // comment test to Lê nam
