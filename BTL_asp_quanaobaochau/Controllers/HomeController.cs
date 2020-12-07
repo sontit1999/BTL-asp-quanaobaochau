@@ -9,7 +9,8 @@ namespace BTL_asp_quanaobaochau.Controllers
     public class HomeController : Controller
     {
         public ActionResult Index()
-        {
+        {   
+            // comment test to Lê nam
             ViewBag.online = 123;
             ViewBag.totalvisit = 456789;
             return View();
