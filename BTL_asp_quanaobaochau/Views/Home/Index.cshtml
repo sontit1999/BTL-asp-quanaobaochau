@@ -1,6 +1,6 @@
 ﻿@{
     ViewBag.Title = "Home Page";
-
+    var listsp = ViewBag.listsp;
 }
 
     <div>
@@ -10,22 +10,23 @@
             <img height="300" class="mySlides" src="https://i.pinimg.com/originals/7a/25/17/7a25176f434f9a130f2995ed2eb4f2e9.jpg" style="width:100%">
         </div>
         <h3>Sản phẩm bán chạy</h3>
-        <div class="row justify-content-center">
-            @for (int i = 0; i < 3; i++)
-            {
-                <div class=" card m-2 col-md-3 text-center">
+       
+    <div class="row justify-content-center">
+        @foreach (var item in listsp)
+        {
+            <div class=" card m-2 col-md-3 text-center">
 
-                    <img class="card-img-top" style=" margin-left: auto; margin-right: auto; display: block; width: 70%; height: auto" src="https://bizweb.dktcdn.net/100/147/060/products/0723437ekb-001-6-115-jpeg.jpg?v=1478255344010" alt="Card image cap">
+                <img class="card-img-top" style=" margin-left: auto; margin-right: auto; display: block; width: 70%; height: auto" src="https://bizweb.dktcdn.net/100/147/060/products/0723437ekb-001-6-115-jpeg.jpg?v=1478255344010" alt="Card image cap">
 
-                    <div class="card-body">
-                        <h5 class="card-title" style="font-size:15px;">Áo cộc kẻ ngang đen trắng</h5>
-                        <p class="card-text redtext" style="font-size:13px;">250 000đ</p>
-                        <p><input  type="text" class="form-control" placeholder="1"  aria-label="" aria-describedby="basic-addon1"><a href="#" style="background-color: deeppink !important;" class="mt-1 btn btn-danger">Mua ngay</a></p>
-                    </div>
+                <div class="card-body">
+                    <h5 class="card-title" style="font-size:15px;">@item.TenSanPham</h5>
+                    <p class="card-text redtext" style="font-size:13px;">@item.Gia VND</p>
+                    <p><input type="text" class="form-control" placeholder="1" aria-label="" aria-describedby="basic-addon1"><a href="#" style="background-color: deeppink !important;" class="mt-1 btn btn-danger">Mua ngay</a></p>
                 </div>
-            }
+            </div>
+        }
 
-        </div>
+    </div>
         <h3>Tin tức</h3>
         <div class="row">
             @for (int i = 0; i < 3; i++)
@@ -41,16 +42,16 @@
         <div class="row justify-content-center">
             @for (int i = 0; i < 15; i++)
             {
-            <div class=" card m-2 col-md-3 text-center">
+                <div class=" card m-2 col-md-3 text-center">
 
-                <img class="card-img-top" style=" margin-left: auto; margin-right: auto; display: block; width: 70%; height: auto" src="https://bizweb.dktcdn.net/100/147/060/products/0723437ekb-001-6-115-jpeg.jpg?v=1478255344010" alt="Card image cap">
+                    <img class="card-img-top" style=" margin-left: auto; margin-right: auto; display: block; width: 70%; height: auto" src="https://bizweb.dktcdn.net/100/147/060/products/0723437ekb-001-6-115-jpeg.jpg?v=1478255344010" alt="Card image cap">
 
-                <div class="card-body">
-                    <h5 class="card-title" style="font-size:15px;">Áo cộc kẻ ngang đen trắng</h5>
-                    <p class="card-text redtext" style="font-size:13px;">250 000đ</p>
-                    <p><input type="text" class="form-control" placeholder="1" aria-label="" aria-describedby="basic-addon1"><a href="#" style="background-color: deeppink !important;" class="mt-1 btn btn-danger">Mua ngay</a></p>
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-size:15px;">Áo cộc kẻ ngang đen trắng</h5>
+                        <p class="card-text redtext" style="font-size:13px;">250 000đ</p>
+                        <p><input type="text" class="form-control" placeholder="1" aria-label="" aria-describedby="basic-addon1"><a href="#" style="background-color: deeppink !important;" class="mt-1 btn btn-danger">Mua ngay</a></p>
+                    </div>
                 </div>
-            </div>
             }
 
         </div>
