@@ -349,13 +349,13 @@
                                                 <td height="20" align="center" valign="middle" class="tab_5_5">Lượt truy cập:</td>
                                             </tr>
                                             <tr>
-                                                <td height="20" align="center" valign="middle" class="tab_5_5"><b>@tongtruycap</b></td>
+                                                <td height="20" align="center" valign="middle" class="tab_5_5"><b>@ApplicationInstance.Application["Totaluser"]</b></td>
                                             </tr>
                                             <tr>
                                                 <td height="20" align="center" valign="middle" class="tab_5_5">Khách Online:</td>
                                             </tr>
                                             <tr>
-                                                <td height="20" align="center" valign="middle" class="tab_5_5"><b>@sokhachonline </b></td>
+                                                <td height="20" align="center" valign="middle" class="tab_5_5"><b>@ApplicationInstance.Application["usernow"] </b></td>
                                             </tr>
                                         </table>
                                     </td>
@@ -380,12 +380,15 @@
                                                     <table>
                                                         <tr>
                                                             <td width="100%" align="center">
-                                                                <div class="input-group mb-3 mt-2">
-                                                                    <input type="text" class="form-control" placeholder="bạn muốn tìm gì ?" aria-label="what ?" aria-describedby="basic-addon2">
-                                                                    <div class="input-group-append">
-                                                                        <button class="btn btn-outline-secondary" type="button">Tìm ngay</button>
+                                                                <form action="/Home/search" method="post">
+                                                                    <div class="input-group mb-3 mt-2">
+                                                                        <input type="text" name="key" class="form-control" placeholder="bạn muốn tìm gì ?" aria-label="what ?" aria-describedby="basic-addon2">
+                                                                        <div class="input-group-append">
+                                                                            <button class="btn btn-outline-secondary" type="submit">Tìm ngay</button>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
+                                                                </form>
+                                                               
                                                             </td>
                                                             
                                                         </tr>
