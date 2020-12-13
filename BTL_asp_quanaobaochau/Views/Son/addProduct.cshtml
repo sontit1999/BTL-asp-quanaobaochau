@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "addProduct";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Thêm sản phẩm</h2>
+<div class="row ">
+    <div class="col-md-6">
+        <form action="/Son/addProduct" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Tên sản phẩm</label>
+                    <input type="text" name="TenSanPham" class="form-control" id="inputAddress" placeholder="">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Mô tả</label>
+                    <input type="text" name="MoTa" class="form-control" id="inputAddress" placeholder="">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Giá</label>
+                    <input type="text" name="Gia" class="form-control" id="inputAddress" placeholder="">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Số lượng</label>
+                    <input type="text" name="SoLuongCon" class="form-control" id="inputAddress" placeholder="">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Xuất xứ</label>
+                    <input type="text" name="XuatXu" class="form-control" id="inputAddress" placeholder="">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Hãng</label>
+                    <input type="text" name="Hang" class="form-control" id="inputAddress" placeholder="">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Số lượt xem</label>
+                    <input type="text" name="SoLuotXem" class="form-control" id="inputAddress" placeholder="">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Loại sản phẩm</label>
+                    <select style="padding:5px;" name="MaLoaiSanPham">
+                        @foreach (var item in Model)
+                        {
+                            <option value="@item.MaLoai">@item.TenLoai</option>
+                        }
+
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Chọn ảnh </label>
+                <input type="file" name="file" id="file" />
+            </div>
+            <button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
+            <button type="button" class="btn btn-outline-danger">Quay lại</button>
+        </form>
+    </div>
+</div>
+
+

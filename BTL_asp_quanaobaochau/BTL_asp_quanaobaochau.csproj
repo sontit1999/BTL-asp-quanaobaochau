@@ -130,6 +130,7 @@
     <Compile Include="Controllers\NamController.cs" />
     <Compile Include="Controllers\NghiaController.cs" />
     <Compile Include="Controllers\QuyenController.cs" />
+    <Compile Include="Controllers\SonController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -190,9 +191,13 @@
     <Content Include="Views\Home\DatHang.cshtml" />
     <Content Include="Views\Home\ChitietSP.cshtml" />
     <Content Include="Views\Home\search.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Son\Index.cshtml" />
+    <Content Include="Views\Son\addProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
     <Folder Include="Views\Nam\" />
     <Folder Include="Views\Nghia\" />
     <Folder Include="Views\Quyen\" />
