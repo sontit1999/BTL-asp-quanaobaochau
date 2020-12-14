@@ -1,24 +1,25 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "SearchProduct";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2 style="margin-left: 30px !important">Danh sách sản phẩm <a href="/Son/addProduct"><button type="button" class="btn btn-outline-danger">Thêm sản phẩm mới</button></a> </h2>
+<h2>Kết quả tìm kiếm ( @ViewBag.sosp )</h2>
 <div class="row p-5">
-    @foreach(var item in Model)
+    @foreach (var item in Model)
     {
         <div class=" card  col-md-4 text-center">
-            
-            
+
+
             <a href="/Son/ViewDetailsProduct?id= @item.MaSanPham"><img class="card-img-top" style=" margin-left: auto; margin-right: auto; display: block; width: 60%; height: auto;" src="/@item.LinkAnh" alt="Card image cap"></a>
 
             <div class="card-body">
                 <h5 class="card-title" style="font-size:15px;"><a href="/Son/ViewDetailsProduct?id= @item.MaSanPham">@item.TenSanPham</a></h5>
-                <p class="card-text redtext" style="font-size:13px;">@item.Gia VND</p>
+                <p class="card-text redtext" style="font-size:13px;"> @item.Gia VND</p>
                 <p class="text-center"><a href="/Son/editProduct?id= @item.MaSanPham" class="mt-1 btn btn-success">Sửa</a><a href="/Son/deleteProduct?id= @item.MaSanPham" style="background-color: deeppink !important;margin-left: 11px !important" class=" mt-1 btn btn-danger">Xóa</a></p>
             </div>
         </div>
     }
 </div>
+
 

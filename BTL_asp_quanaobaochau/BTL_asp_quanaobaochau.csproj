@@ -194,6 +194,9 @@
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Son\Index.cshtml" />
     <Content Include="Views\Son\addProduct.cshtml" />
+    <Content Include="Views\Son\editProduct.cshtml" />
+    <Content Include="Views\Son\ViewDetailsProduct.cshtml" />
+    <Content Include="Views\Son\SearchProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

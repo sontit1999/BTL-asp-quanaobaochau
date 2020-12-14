@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "ViewDetailsProduct";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+    <div class="row ">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-5">
+                    <img class="card-img-top" style=" margin-left: auto; margin-right: auto; display: block; width: 60%; height: auto" src="/@ViewBag.sp.LinkAnh" alt="Card image cap">
+                </div>
+                <div class="col-md-7">
+                    <h3>
+                        @ViewBag.sp.TenSanPham
+                    </h3>
+                    <p>Hãng: @ViewBag.sp.Hang</p>
+                    <p>Xuất xứ: @ViewBag.sp.XuatXu</p>
+                    <p>Số lượng: @ViewBag.sp.SoLuongCon</p>
+                    <p>Số lượt xem: @ViewBag.sp.SoLuotXem</p>
+                </div>
+            </div>
+            <h3 style="background-color:aquamarine">Thông tin sản phẩm</h3>
+            <p>
+                @ViewBag.sp.MoTa
+            </p>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+

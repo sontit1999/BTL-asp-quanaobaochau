@@ -15,9 +15,16 @@ namespace BTL_asp_quanaobaochau.Controllers
         // hiển thị ds sản phẩm
         public ActionResult Index()
         {
-            var sp = (from p in db.SanPhams
-                      select p).ToList();        
-          
+            var sp = db.SanPhams.Where(p => p.TinhTrang == 1).OrderBy(p=>p.MaSanPham).ToList();
+            sp.Reverse();
+            return View(sp);
+        }
+        public ActionResult SearchProduct(string key)
+        {
+            var sp = db.SanPhams.Where(p => p.TinhTrang == 1)
+                .Where(p => p.TenSanPham.Contains(key))
+                .ToList();
+            ViewBag.sosp = sp.Count;
             return View(sp);
         }
         public ActionResult addProduct()
@@ -29,7 +36,7 @@ namespace BTL_asp_quanaobaochau.Controllers
         [HttpPost]
         public ActionResult addProduct(SanPham sp,HttpPostedFileBase file)
         {
-            if (file.ContentLength > 0)
+            if (file!=null && file.ContentLength > 0)
             {
                 var fileName = System.IO.Path.GetFileName(file.FileName);
                 var path =Server.MapPath("~/Images/" + fileName);
@@ -51,5 +58,48 @@ namespace BTL_asp_quanaobaochau.Controllers
         
             
         }
+        public ActionResult editProduct(int id)
+        {
+           
+            SanPham sp = db.SanPhams.Where(p => p.MaSanPham == id).First();
+           
+            var loaisp = (from lsp in db.LoaiSanPhams
+                          select lsp).ToList();
+            ViewBag.sanpham = sp;
+            return View(loaisp);
+        
+        }
+        [HttpPost]
+        public ActionResult editProduct(SanPham sp, HttpPostedFileBase file)
+        {
+            // lấy sp ngta đang sửa trong csdl
+            var spcansua = db.SanPhams.Where(p => p.MaSanPham == sp.MaSanPham).First();
+            if (file != null && file.ContentLength > 0)
+            {
+                var fileName = System.IO.Path.GetFileName(file.FileName);
+                var path = Server.MapPath("~/Images/" + fileName);
+                file.SaveAs(path);
+                spcansua.LinkAnh = "Images/" + fileName;               
+            }
+            spcansua.TenSanPham = sp.TenSanPham;
+            spcansua.MoTa = sp.MoTa;
+            spcansua.Gia = sp.Gia;
+            spcansua.SoLuongCon = sp.SoLuongCon;
+            spcansua.SoLuotXem = sp.SoLuotXem;
+            spcansua.XuatXu = sp.XuatXu;
+            spcansua.Hang = sp.Hang;
+            spcansua.MaLoaiSanPham = sp.MaLoaiSanPham;
+            sp.TinhTrang = sp.TinhTrang;
+            UpdateModel(spcansua);
+            db.SubmitChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult ViewDetailsProduct(int id)
+        {
+            var sp = db.SanPhams.Where(p => p.MaSanPham == id).First();
+            ViewBag.sp = sp;
+            return View();
+        }
+
     }
 }
