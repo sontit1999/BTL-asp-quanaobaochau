@@ -9,41 +9,39 @@
     <div class="col-md-3"></div>
     <div class="col-md-6">
         <form action="/Son/addProduct" method="post" enctype="multipart/form-data">
+          
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label>Tên sản phẩm</label>
-                    <input type="text" name="TenSanPham" class="form-control" id="inputAddress" placeholder="">
+                    <label>Tên sản phẩm<span style="color:red;font-size:10px" >@ViewData["tensp"]</span> </label>
+                    <input type="text" name="TenSanPham" class="form-control" id="inputAddress"  placeholder="">
                 </div>
                 <div class="form-group col-md-6">
-                    <label>Mô tả</label>
+                    <label>Mô tả <span style="color:red;font-size:10px">@ViewData["mota"]</span></label>
                     <input type="text" name="MoTa" class="form-control" id="inputAddress" placeholder="">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label>Giá</label>
-                    <input type="text" name="Gia" class="form-control" id="inputAddress" placeholder="">
+                    <label>Giá <span style="color:red;font-size:10px">@ViewData["gia"]</span></label>
+                    <input type="number" name="Gia" class="form-control" id="inputAddress" placeholder="">
                 </div>
                 <div class="form-group col-md-6">
-                    <label>Số lượng</label>
-                    <input type="text" name="SoLuongCon" class="form-control" id="inputAddress" placeholder="">
+                    <label>Số lượng <span style="color:red;font-size:10px">@ViewData["soluong"]</span></label>
+                    <input type="number" name="SoLuongCon" class="form-control" id="inputAddress" placeholder="">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label>Xuất xứ</label>
+                    <label>Xuất xứ <span style="color:red;font-size:10px">@ViewData["xuatxu"]</span></label>
                     <input type="text" name="XuatXu" class="form-control" id="inputAddress" placeholder="">
                 </div>
                 <div class="form-group col-md-6">
-                    <label>Hãng</label>
+                    <label>Hãng <span style="color:red;font-size:10px">@ViewData["hang"]</span></label>
                     <input type="text" name="Hang" class="form-control" id="inputAddress" placeholder="">
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label>Số lượt xem</label>
-                    <input type="text" name="SoLuotXem" class="form-control" id="inputAddress" placeholder="">
-                </div>
+
                 <div class="form-group col-md-6">
                     <label>Loại sản phẩm</label>
                     <select style="padding:5px;" name="MaLoaiSanPham">
@@ -54,11 +52,12 @@
 
                     </select>
                 </div>
+                <div class="form-group">
+                    <label>Chọn ảnh<span style="color:red;font-size:10px">@ViewData["anh"]</span> </label>
+                    <input type="file" name="file" id="file" />
+                </div>
             </div>
-            <div class="form-group">
-                <label>Chọn ảnh </label>
-                <input type="file" name="file" id="file" />
-            </div>
+            
             <button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
             <button type="button" class="btn btn-outline-danger">@Html.ActionLink("Quay lại", "Index")</button>
         </form>

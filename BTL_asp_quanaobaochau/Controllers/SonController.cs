@@ -36,17 +36,52 @@ namespace BTL_asp_quanaobaochau.Controllers
         [HttpPost]
         public ActionResult addProduct(SanPham sp,HttpPostedFileBase file)
         {
-            if (file!=null && file.ContentLength > 0)
+            // validate data
+            if (String.IsNullOrEmpty(sp.TenSanPham))
+            {
+                @ViewData["tensp"] = "Không được trống!";
+            }
+            if (String.IsNullOrEmpty(sp.MoTa))
+            {
+                @ViewData["mota"] = "Không được trống!";
+            }
+            if (String.IsNullOrEmpty(sp.XuatXu))
+            {
+                @ViewData["xuatxu"] = "Không được trống!";
+            }
+            if (String.IsNullOrEmpty(sp.Hang))
+            {
+                @ViewData["hang"] = "Không được trống!";
+            }
+            if(file == null)
+            {
+                @ViewData["anh"] = "Chưa chọn ảnh!";
+            }
+            if (sp.Gia <= 0)
+            {
+                @ViewData["gia"] = "Giá phải > 0!";
+            }
+            if (sp.SoLuongCon <= 0)
+            {
+                @ViewData["soluong"] = "Số lượng > 0!";
+            }
+            if (String.IsNullOrEmpty(sp.TenSanPham) || String.IsNullOrEmpty(sp.MoTa) || String.IsNullOrEmpty(sp.XuatXu) || String.IsNullOrEmpty(sp.Hang) || file == null)
+            {
+                return this.addProduct();
+            }
+            else
             {
                 var fileName = System.IO.Path.GetFileName(file.FileName);
-                var path =Server.MapPath("~/Images/" + fileName);
+                var path = Server.MapPath("~/Images/" + fileName);
                 file.SaveAs(path);
                 sp.LinkAnh = "Images/" + fileName;
                 sp.TinhTrang = 1;
+                sp.SoLuotXem = 0;
+                db.SanPhams.InsertOnSubmit(sp);
+                db.SubmitChanges();
+                return RedirectToAction("Index");
             }
-            db.SanPhams.InsertOnSubmit(sp);
-            db.SubmitChanges();
-            return RedirectToAction("Index");
+           
         }
         public ActionResult deleteProduct(string id)
         {
@@ -72,27 +107,63 @@ namespace BTL_asp_quanaobaochau.Controllers
         [HttpPost]
         public ActionResult editProduct(SanPham sp, HttpPostedFileBase file)
         {
-            // lấy sp ngta đang sửa trong csdl
-            var spcansua = db.SanPhams.Where(p => p.MaSanPham == sp.MaSanPham).First();
-            if (file != null && file.ContentLength > 0)
+
+            // validate data
+            if (String.IsNullOrEmpty(sp.TenSanPham))
             {
-                var fileName = System.IO.Path.GetFileName(file.FileName);
-                var path = Server.MapPath("~/Images/" + fileName);
-                file.SaveAs(path);
-                spcansua.LinkAnh = "Images/" + fileName;               
+                @ViewData["tensp"] = "Không được trống!";
             }
-            spcansua.TenSanPham = sp.TenSanPham;
-            spcansua.MoTa = sp.MoTa;
-            spcansua.Gia = sp.Gia;
-            spcansua.SoLuongCon = sp.SoLuongCon;
-            spcansua.SoLuotXem = sp.SoLuotXem;
-            spcansua.XuatXu = sp.XuatXu;
-            spcansua.Hang = sp.Hang;
-            spcansua.MaLoaiSanPham = sp.MaLoaiSanPham;
-            sp.TinhTrang = sp.TinhTrang;
-            UpdateModel(spcansua);
-            db.SubmitChanges();
-            return RedirectToAction("Index");
+            if (String.IsNullOrEmpty(sp.MoTa))
+            {
+                @ViewData["mota"] = "Không được trống!";
+            }
+            if (String.IsNullOrEmpty(sp.XuatXu))
+            {
+                @ViewData["xuatxu"] = "Không được trống!";
+            }
+            if (String.IsNullOrEmpty(sp.Hang))
+            {
+                @ViewData["hang"] = "Không được trống!";
+            }
+           
+            if (sp.Gia <= 0)
+            {
+                @ViewData["gia"] = "Giá phải > 0!";
+            }
+            if (sp.SoLuongCon <= 0)
+            {
+                @ViewData["soluong"] = "Số lượng > 0!";
+            }
+            if (String.IsNullOrEmpty(sp.TenSanPham) || String.IsNullOrEmpty(sp.MoTa) || String.IsNullOrEmpty(sp.XuatXu) || String.IsNullOrEmpty(sp.Hang) || sp.Gia <= 0 || sp.SoLuongCon <=0)
+            {
+                return this.editProduct(sp.MaSanPham);
+            }
+            else
+            {
+                // lấy sp ngta đang sửa trong csdl
+                var spcansua = db.SanPhams.Where(p => p.MaSanPham == sp.MaSanPham).First();
+                if (file != null && file.ContentLength > 0)
+                {
+                    var fileName = System.IO.Path.GetFileName(file.FileName);
+                    var path = Server.MapPath("~/Images/" + fileName);
+                    file.SaveAs(path);
+                    spcansua.LinkAnh = "Images/" + fileName;
+                }
+                spcansua.TenSanPham = sp.TenSanPham;
+                spcansua.MoTa = sp.MoTa;
+                spcansua.Gia = sp.Gia;
+                spcansua.SoLuongCon = sp.SoLuongCon;
+                spcansua.SoLuotXem = sp.SoLuotXem;
+                spcansua.XuatXu = sp.XuatXu;
+                spcansua.Hang = sp.Hang;
+                spcansua.MaLoaiSanPham = sp.MaLoaiSanPham;
+                sp.TinhTrang = sp.TinhTrang;
+                UpdateModel(spcansua);
+                db.SubmitChanges();
+                return RedirectToAction("Index");
+            }
+
+            
         }
         public ActionResult ViewDetailsProduct(int id)
         {

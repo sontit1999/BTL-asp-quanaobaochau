@@ -12,46 +12,43 @@
         <form action="/Son/editProduct" method="post" enctype="multipart/form-data">
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label>Tên sản phẩm</label>
-                    <input type="text" name="MaSanPham" style="display:none;" value="@sp.MaSanPham" class="form-control" id="inputAddress" placeholder="">
+                    <label>Tên sản phẩm<span style="color:red;font-size:10px">@ViewData["tensp"]</span> </label>
+                    <input style="display:none;" type="text" name="MaSanPham" value="@sp.MaSanPham" class="form-control" id="inputAddress" placeholder="">
                     <input type="text" name="TenSanPham" value="@sp.TenSanPham" class="form-control" id="inputAddress" placeholder="">
                 </div>
                 <div class="form-group col-md-6">
-                    <label>Mô tả</label>
+                    <label>Mô tả <span style="color:red;font-size:10px">@ViewData["mota"]</span></label>
                     <input type="text" name="MoTa" value="@sp.MoTa" class="form-control" id="inputAddress" placeholder="">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label>Giá</label>
-                    <input type="text" name="Gia" value="@sp.Gia" class="form-control" id="inputAddress" placeholder="">
+                    <label>Giá <span style="color:red;font-size:10px">@ViewData["gia"]</span></label>
+                    <input type="number" name="Gia" value="@sp.Gia" class="form-control" id="inputAddress" placeholder="">
                 </div>
                 <div class="form-group col-md-6">
-                    <label>Số lượng</label>
-                    <input type="text" name="SoLuongCon" value="@sp.SoLuongCon" class="form-control" id="inputAddress" placeholder="">
+                    <label>Số lượng <span style="color:red;font-size:10px">@ViewData["soluong"]</span></label>
+                    <input type="number" value="@sp.SoLuongCon" name="SoLuongCon" class="form-control" id="inputAddress" placeholder="">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label>Xuất xứ</label>
-                    <input type="text" name="XuatXu" value="@sp.XuatXu" class="form-control" id="inputAddress" placeholder="">
+                    <label>Xuất xứ <span style="color:red;font-size:10px">@ViewData["xuatxu"]</span></label>
+                    <input type="text" value="@sp.XuatXu" name="XuatXu" class="form-control" id="inputAddress" placeholder="">
                 </div>
                 <div class="form-group col-md-6">
-                    <label>Hãng</label>
-                    <input type="text" name="Hang" value="@sp.Hang" class="form-control" id="inputAddress" placeholder="">
+                    <label>Hãng <span style="color:red;font-size:10px">@ViewData["hang"]</span></label>
+                    <input type="text" value="@sp.Hang" name="Hang" class="form-control" id="inputAddress" placeholder="">
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label>Số lượt xem</label>
-                    <input type="text" name="SoLuotXem" value="@sp.SoLuotXem" class="form-control" id="inputAddress" placeholder="">
-                </div>
+
                 <div class="form-group col-md-6">
                     <label>Loại sản phẩm</label>
                     <select style="padding:5px;" name="MaLoaiSanPham">
                         @foreach (var item in Model)
                         {
-                            if (@sp.MaLoaiSanPham == @item.MaLoai)
+                            if (item.MaLoai == sp.MaLoaiSanPham)
                             {
                                 <option selected value="@item.MaLoai">@item.TenLoai</option>
                             }
@@ -59,15 +56,14 @@
                             {
                                 <option value="@item.MaLoai">@item.TenLoai</option>
                             }
-
                         }
 
                     </select>
                 </div>
-            </div>
-            <div class="form-group">
-                <label>Chọn ảnh </label>
-                <input type="file" name="file" id="file" />
+                <div class="form-group">
+                    <label>Chọn ảnh<span style="color:red;font-size:10px">@ViewData["anh"]</span> </label>
+                    <input type="file" name="file" id="file" />
+                </div>
             </div>
             <button type="submit" class="btn btn-primary">Cập nhật sản phẩm</button>
             <button type="button" class="btn btn-outline-danger">Quay lại</button>
