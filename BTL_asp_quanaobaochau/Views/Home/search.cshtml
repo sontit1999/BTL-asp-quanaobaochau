@@ -4,6 +4,21 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>search</h2>
-<p>từ khóa: @ViewBag.key</p>
+<h2>Kết quả tìm được</h2>
+<div class="row">
+    @foreach (var item in @ViewBag.listsp)
+    {
+        <div class=" card m-2 col-md-3 text-center">
+            <a href="/Home/ChitietSP?id= @item.MaSanPham"><img class="card-img-top" style=" margin-left: auto; margin-right: auto; display: block; width: 70%; height: auto" src="\@item.LinkAnh" alt="Card image cap"></a>
+
+
+            <div class="card-body">
+                <h5 class="card-title" style="font-size:15px;"><a href="/Home/ChitietSP?id= @item.MaSanPham">@item.TenSanPham</a></h5>
+                <p class="card-text redtext" style="font-size:13px;">@item.Gia VND</p>
+                <p><input type="text" class="form-control" placeholder="1" aria-label="" aria-describedby="basic-addon1"><a href="#" style="background-color: deeppink !important;" class="mt-1 btn btn-danger">Mua ngay</a></p>
+            </div>
+        </div>
+    }
+</div>
+
 

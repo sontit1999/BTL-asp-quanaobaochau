@@ -197,6 +197,7 @@
     <Content Include="Views\Son\editProduct.cshtml" />
     <Content Include="Views\Son\ViewDetailsProduct.cshtml" />
     <Content Include="Views\Son\SearchProduct.cshtml" />
+    <Content Include="Views\Home\ChitietTT.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

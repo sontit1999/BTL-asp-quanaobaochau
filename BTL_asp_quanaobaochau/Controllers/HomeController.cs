@@ -12,8 +12,7 @@ namespace BTL_asp_quanaobaochau.Controllers
         DataBaseContextDataContext db = new DataBaseContextDataContext();
         public ActionResult Index()
         {
-            var sp = (from p in db.SanPhams
-                         select p).ToList();
+            var sp = db.SanPhams.ToList();
             // comment test to Lê nam
             var listNew = (from tt in db.TinTucs
                            select tt).ToList();
@@ -41,16 +40,22 @@ namespace BTL_asp_quanaobaochau.Controllers
             ViewBag.Message = " Đặt Hàng";
             return View();
         }
-        public ActionResult ChitietSP(string id)
+        public ActionResult ChitietSP(int id)
         {
             ViewBag.Message = "Chi tiết sp";
-            ViewBag.idsp = id;
+            ViewBag.sp = db.SanPhams.Where(p => p.MaSanPham == id).First();
             return View();
         }
         public ActionResult search(string key="")
         {
             ViewBag.Message = "Search";
-            ViewBag.key = key;
+            ViewBag.listsp = db.SanPhams.Where(p => p.TenSanPham.Contains(key));
+            return View();
+        }
+        public ActionResult ChitietTT(int id)
+        {
+            ViewBag.Message = "Chi tiết tin";
+            ViewBag.tt = db.TinTucs.Where(p => p.MaTinTuc == id).First();
             return View();
         }
     }
