@@ -28,14 +28,15 @@ namespace BTL_asp_quanaobaochau
         }
         protected void Session_Start()
         {
-            /*Application.Lock();
+            Session["giohang"] = null;
+            Application.Lock();
             Application["Totaluser"] = int.Parse(Application["Totaluser"].ToString()) + 1 ;
             Application["usernow"] = int.Parse(Application["usernow"].ToString()) + 1;
          
             System.IO.StreamWriter sw = new System.IO.StreamWriter(Server.MapPath("SL.txt"));
             sw.Write(Application["Totaluser"].ToString());
             sw.Close();
-            Application.UnLock();*/
+            Application.UnLock();
         }
         protected void Session_End()
         {

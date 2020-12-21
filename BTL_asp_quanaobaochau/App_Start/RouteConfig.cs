@@ -16,7 +16,7 @@ namespace BTL_asp_quanaobaochau
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Nghia", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

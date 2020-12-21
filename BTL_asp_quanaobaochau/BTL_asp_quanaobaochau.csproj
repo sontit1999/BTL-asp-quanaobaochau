@@ -240,7 +240,7 @@
     <Content Include="Views\Son\SearchProduct.cshtml" />
     <Content Include="Views\Nghia\Index.cshtml" />
     <Content Include="Views\Nghia\NhapThongTinDatHang.cshtml" />
-    <Content Include="Views\Nghia\giohang.cshtml" />
+    <Content Include="Views\Nghia\muahang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

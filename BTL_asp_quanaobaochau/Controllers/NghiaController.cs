@@ -22,6 +22,7 @@ namespace BTL_asp_quanaobaochau.Controllers
         }
         public ActionResult muahang(int id)
         {
+            Console.WriteLine("mua hang");
             if (Session["giohang"] == null)
             {
                 GioHang a = new GioHang();
@@ -33,6 +34,7 @@ namespace BTL_asp_quanaobaochau.Controllers
                 List<GioHang> giohang = new List<GioHang>();
                 giohang.Add(a);
                 Session["giohang"] = giohang;
+                ViewBag.listsp = giohang;
             }
             else
             {
@@ -54,7 +56,7 @@ namespace BTL_asp_quanaobaochau.Controllers
                 }
 
                 Session["giohang"] = giohang;
-
+                ViewBag.listsp = giohang;
             }
             return View();
         }

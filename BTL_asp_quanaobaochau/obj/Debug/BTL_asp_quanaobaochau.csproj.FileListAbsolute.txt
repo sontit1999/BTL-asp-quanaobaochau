@@ -238,3 +238,4 @@ E:\.net\BTL-asp-quanaobaochau\BTL_asp_quanaobaochau\bin\EntityFramework.dll
 E:\.net\BTL-asp-quanaobaochau\BTL_asp_quanaobaochau\bin\EntityFramework.SqlServer.dll
 E:\.net\BTL-asp-quanaobaochau\BTL_asp_quanaobaochau\bin\EntityFramework.xml
 E:\.net\BTL-asp-quanaobaochau\BTL_asp_quanaobaochau\bin\EntityFramework.SqlServer.xml
+E:\.net\BTL-asp-quanaobaochau\BTL_asp_quanaobaochau\obj\Debug\BTL_asp_quanaobaochau.csprojAssemblyReference.cache
