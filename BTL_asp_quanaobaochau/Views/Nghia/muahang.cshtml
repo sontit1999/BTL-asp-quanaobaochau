@@ -4,6 +4,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     var listsp = ViewBag.listsp;
     int stt=0;
+    var length = ViewBag.length;
+    var kiemtra = ViewBag.kiemtra;
 }
 
 <style type="text/css">
@@ -16,7 +18,7 @@
         stt++;
     }
 </script>
-<h2>Xem Giỏ Hàng</h2>
+<h2>Xem giỏ hàng</h2>
 <table width="100%" border="0" cellpadding="1" cellspacing="1" class="table table-bordered">
     <form action="/index.php?lg=vn&Bcat=70&start=0&id=30009" method="post" name="frmList">
         <thead>
@@ -48,7 +50,7 @@
                     <td valign="middle" class="text_def"><input type=checkbox name="chkid" checked value="30009" onClick="docheckone();"></td>
                     <td class="text_def">ABT 1087</td>
                     <td align="left" valign="middle" class="text_def">
-                        <a href="http://quanaobaochau.com/dat-hang/ao-so-mi-ngan-tay-linen-polo-apple-kids-ri-5_size-1-5t-vn-p-30009-0.html">@sp.Id</a>
+                        <a href="http://quanaobaochau.com/dat-hang/ao-so-mi-ngan-tay-linen-polo-apple-kids-ri-5_size-1-5t-vn-p-30009-0.html">@sp.ten</a>
                         <input type=hidden value="0" name="size_30009">
                         <input type=hidden value="0" name="color_30009">
                         <input type=hidden value="0" name="made_30009">
@@ -90,7 +92,7 @@
         </tr>
         <tr align="left" valign="top" bgcolor="#FFFFFF" class="bg_all">
             <td height="36" colspan=7 valign="middle" class="tab_left_3">
-                <input type="button" class="nut_nhan_2" style="width: 300px;" value="Mua thêm sản phẩn khác" onClick="javascript: shopping('33','vn');" style="width:160px;">
+                <input type="button" class="nut_nhan_2" style="width: 300px;"  value="Mua thêm sản phẩn khác" onclick="location.href='/Home'" style="width:160px;">
                 <input type="button" class="nut_nhan_2" value="Cập nhật giỏ hàng" onClick="javascript: update('71','vn','0');">
                 <input type=hidden value="frmList" name="frmList">
                 <input type=hidden value="0" name="chkid">
@@ -108,4 +110,10 @@
         <input name="sum_price" value="0" type="hidden">
     </form>
 </table>
+<script>
+    function onBackHome() {
+        
+    }
+
+</script>
 
