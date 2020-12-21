@@ -51,7 +51,7 @@ namespace BTL_asp_quanaobaochau.Models
     #endregion
 		
 		public DataBaseContextDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QuanAoBaoChauConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QuanAoBaoChauConnectionString1"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

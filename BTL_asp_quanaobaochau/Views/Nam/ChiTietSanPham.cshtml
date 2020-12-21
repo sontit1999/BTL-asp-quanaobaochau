@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "ChiTietSanPham";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body, html {
+          height: 100%;
+        }
+
+        .parallax {
+          /* The image used */
+          background-image: url('@Model.LinkAnh');
+
+          /* Full height */
+          height: 100%;
+          /* Create the parallax scrolling effect */
+          background-attachment: fixed;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        #imgs111 {
+            float: left;
+        }
+        #text123 {
+            margin-top: 100px;
+            font-style: italic;
+            font-size: smaller;
+            padding: 20px;
+        }
+
+        .responsive {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+        }
+
+
+/* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
+        @@media only screen and (max-device-width: 1366px) {
+          .parallax {
+            background-attachment: scroll;
+          }
+        }
+    </style>
+</head>
+<body>
+    <div id="imgs111" class=" card m-2 col-md-3 text-center">
+        <img class="card-img-top" style=" margin-left: auto; margin-right: auto; display: block; width: 70%; height: auto" src="@Model.LinkAnh" alt="Card image cap">
+
+        <div class="card-body">     
+            <p><input type="text" class="form-control" placeholder="1" aria-label="" aria-describedby="basic-addon1"><a href="#" style="background-color: deeppink !important;" class="mt-1 btn btn-danger">Mua ngay</a></p>
+        </div>
+    </div>
+    <fieldset id="field111">
+        <legend>Chi tiết sản phẩm</legend>
+        <div class="display-label">Mã sản Phẩm: @Model.MaSanPham</div>
+        <div class="display-label">Tên Sản phẩm:@Model.TenSanPham</div>
+        <div class="display-label">Giá: @Model.Gia</div>
+        <div class="display-label">Số lượng còn: @Model.SoLuongCon</div>
+        <div class="display-label">Xuất xứ: @Model.XuatXu</div>
+        <div class="display-label">Hãng: @Model.Hang</div>
+        <div class="display-label">Tình trạng: Có hàng</div>
+    </fieldset>
+    <div class="parallax"></div>
+
+    <div id="text123" style="height:1000px;background-color:darkseagreen;font-size:36px">
+        <div class="display-label">@Model.MoTa</div>
+        <hr />
+        <img src="@Model.LinkAnh" alt="Nature" class="responsive" width="600" height="400">
+    </div>
+    <div class="parallax"></div>
+</body>
+
+
+

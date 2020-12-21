@@ -104,37 +104,40 @@
                                 @* đặt ảnh banner ở đây*@
                                 <img style="width:100%; height:auto;" src="https://thumbs.dreamstime.com/b/black-friday-sale-template-horizontal-banner-hand-drawn-fashion-models-copy-space-new-collection-clothes-black-friday-106319340.jpg" />
                             </div>
-                            <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
-                                <tr>
-                                    <td align="right" valign="middle" height="0">
-                                        <div id="ddtabs" class="menu">
-                                            <ul>
-                                                <li>@Html.ActionLink("Trang chủ", "Index", "Home")</li>
-                                                <u class=menu_center><b></b></u>                                             
-                                                <li>@Html.ActionLink("Đặt hàng", "DatHang", "Home")</li>
-                                                <u class=menu_center><b></b></u>
-                                                <li>@Html.ActionLink("Thời Trang Bé Trai", "About", "Home")</li>
-                                                <u class=menu_center><b></b></u>
-                                                <li>@Html.ActionLink("Thời Trang Bé Gái", "Contact", "Home")</li>
-                                                <u class=menu_center><b></b></u>
-                                                <li>@Html.ActionLink("Quần áo quảng châu", "Index", "Home")</li>
-                                                <u class=menu_center><b></b></u>
-                                               
-                                                <li>@Html.ActionLink("Tin tức", "Index", "Home")</li>
-                                                <u class=menu_center><b></b></u>
-                                                <li>@Html.ActionLink("Sản phẩm khác", "Index", "Home")</li>
-                                                <u class=menu_center><b></b></u>
-                                                <div id="gc1"></div>
-                                                <div id="gc2"></div>
-                                            </ul>
-                                        </div>
-                                        <script type="text/javascript" src="menu_css/menu.js"></script>
-                                        <script type="text/javascript">
-                                            ddtabmenu.definemenu("ddtabs", 0)
-                                        </script>
-                                    </td>
-                                </tr>
-                            </table>
+                            @using (Html.BeginForm())
+                            {
+                                <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td align="right" valign="middle" height="0">
+                                            <div id="ddtabs" class="menu">
+                                                <ul>
+                                                    <li>@Html.ActionLink("Trang chủ", "Index", "Home")</li>
+                                                    <u class=menu_center><b></b></u>
+                                                    <li>@Html.ActionLink("Đặt hàng", "DatHang", "Home")</li>
+                                                    <u class=menu_center><b></b></u>
+                                                    <li>@Html.ActionLink("Thời Trang Bé Trai", "QuanAoBeTrai", "Nam")</li>
+                                                    <u class=menu_center><b></b></u>
+                                                    <li>@Html.ActionLink("Thời Trang Bé Gái", "ThoiTrangBeGai", "Nam")</li>
+                                                    <u class=menu_center><b></b></u>
+                                                    <li>@Html.ActionLink("Quần áo quảng châu", "Index", "Home")</li>
+                                                    <u class=menu_center><b></b></u>
+
+                                                    <li>@Html.ActionLink("Tin tức", "Index", "Home")</li>
+                                                    <u class=menu_center><b></b></u>
+                                                    <li>@Html.ActionLink("Sản phẩm khác", "Index", "Home")</li>
+                                                    <u class=menu_center><b></b></u>
+                                                    <div id="gc1"></div>
+                                                    <div id="gc2"></div>
+                                                </ul>
+                                            </div>
+                                            <script type="text/javascript" src="menu_css/menu.js"></script>
+                                            <script type="text/javascript">
+                                                ddtabmenu.definemenu("ddtabs", 0)
+                                            </script>
+                                        </td>
+                                    </tr>
+                                </table>
+                            }                    
                         </td>
                     </tr>
                 </table>
@@ -171,25 +174,25 @@
                             </table>
                             <table class="block_1_top" cellspacing=0 cellpadding=0 width="100%" border=0>
                                 <tr>
-                                    <td valign="middle" class="tab_8_8 block_1_title"><a href="quan-ao-be-trai-vn-12-0.html">Thời Trang Bé Trai</a></td>
+                                    <td valign="middle" class="tab_8_8 block_1_title">@Html.ActionLink("Thời trang bé trai", "QuanAoBeTrai", "Nam")</td>
                                 </tr>
                                 <tr>
                                     <td valign="middle" class="block_1_center">
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="quan-ao-be-trai/ao-be-trai-vn-b-139-0.html">Áo bé trai</a></td>
+                                                <td valign="middle" class="menu_s">@Html.ActionLink("Áo bé trai", "SanPham", new { id = "1" })</td>
                                             </tr>
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="quan-ao-be-trai/quan-be-trai-vn-b-140-0.html">Quần bé trai</a></td>
+                                                <td valign="middle" class="menu_s">@Html.ActionLink("Quần bé trai", "SanPham", new { id = "2" })</td>
                                             </tr>
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="quan-ao-be-trai/do-bo-be-trai-vn-b-141-0.html">Đồ bộ bé trai</a></td>
+                                                <td valign="middle" class="menu_s">@Html.ActionLink("Đồ bé trai", "SanPham", new { id = "3" })</td>
                                             </tr>
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="quan-ao-be-trai/yem-be-trai-be-gai-vn-b-158-0.html">Yếm Bé Trai, Bé Gái</a></td>
+                                                <td valign="middle" class="menu_s">@Html.ActionLink("Yếm bé trai, bé gái", "SanPham", new { id = "4" })</td>
                                             </tr>
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="quan-ao-be-trai/quan-ao-bong-da-tre-em-vn-b-163-0.html">Quần Áo Bóng Đá Trẻ Em</a></td>
+                                                <td valign="middle" class="menu_s">@Html.ActionLink("Quần áo bóng đá trẻ em", "SanPham", new { id = "5" })</td>
                                             </tr>
                                         </table>
                                     </td>
@@ -202,25 +205,25 @@
                             </table>
                             <table class="block_1_top" cellspacing=0 cellpadding=0 width="100%" border=0>
                                 <tr>
-                                    <td valign="middle" class="tab_8_8 block_1_title"><a href="quan-ao-be-gai-vn-32-0.html">Thời trang bé gái</a></td>
+                                    <td valign="middle" class="tab_8_8 block_1_title">@Html.ActionLink("Thời trang bé gái", "ThoiTrangBeGai", "Nam")</td>
                                 </tr>
                                 <tr>
                                     <td valign="middle" class="block_1_center">
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="quan-ao-be-gai/ao-be-gai-vn-b-143-0.html">Áo bé gái</a></td>
+                                                <td valign="middle" class="menu_s">@Html.ActionLink("Áo bé gái", "SanPham", new { id = "6" })</td>
                                             </tr>
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="quan-ao-be-gai/quan-be-gai-vn-b-144-0.html">Quần bé gái</a></td>
+                                                <td valign="middle" class="menu_s">@Html.ActionLink("Quần bé gái", "SanPham", new { id = "7" })</td>
                                             </tr>
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="quan-ao-be-gai/dam-vn-b-153-0.html">Đầm</a></td>
+                                                <td valign="middle" class="menu_s">@Html.ActionLink("Đầm bé gái", "SanPham", new { id = "8" })</td>
                                             </tr>
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="quan-ao-be-gai/do-bo-be-gai-vn-b-146-0.html">Đồ bộ bé gái</a></td>
+                                                <td valign="middle" class="menu_s">@Html.ActionLink("Đồ bộ bé gái", "SanPham", new { id = "9" })</td>
                                             </tr>
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="quan-ao-be-gai/quan-di-bien-du-lich-be-trai-be-gai-vn-b-159-0.html">Quần Đi Biển, Du Lịch Bé Trai, Bé Gái</a></td>
+                                                <td valign="middle" class="menu_s">@Html.ActionLink("Quần du lịch, đi biển bé trai, bé gái", "SanPham", new { id = "10" })</td>
                                             </tr>
                                         </table>
                                     </td>

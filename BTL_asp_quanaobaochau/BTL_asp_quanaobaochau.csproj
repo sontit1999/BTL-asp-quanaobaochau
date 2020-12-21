@@ -126,6 +126,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ThongKeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NamController.cs" />
     <Compile Include="Controllers\NghiaController.cs" />
@@ -141,8 +145,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assests\aoTreEm.jpg" />
     <Content Include="Assests\dathang.jpg" />
     <Content Include="Assests\heart2.gif" />
+    <Content Include="Assests\img_avatar2.png" />
+    <Content Include="Assests\img_nam.jpg" />
+    <Content Include="Assests\img_team.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -158,6 +166,12 @@
       <LastGenOutput>DataBaseContext.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ThongKe\Index.cshtml" />
     <None Include="Models\DataBaseContext.dbml.layout">
       <DependentUpon>DataBaseContext.dbml</DependentUpon>
     </None>
@@ -190,10 +204,17 @@
     <Content Include="Views\Home\DatHang.cshtml" />
     <Content Include="Views\Home\ChitietSP.cshtml" />
     <Content Include="Views\Home\search.cshtml" />
+    <Content Include="Views\Nam\QuanAoBeTrai.cshtml" />
+    <Content Include="Views\Nam\ThoiTrangBeGai.cshtml" />
+    <Content Include="Views\Nam\SanPham.cshtml" />
+    <Content Include="Views\Nam\ChiTietSanPham.cshtml" />
+    <Content Include="Views\Nam\Login.cshtml" />
+    <Content Include="Views\Nam\Home.cshtml" />
+    <Content Include="Views\Nam\ThongKe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Nam\" />
+    <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Views\Nghia\" />
     <Folder Include="Views\Quyen\" />
   </ItemGroup>

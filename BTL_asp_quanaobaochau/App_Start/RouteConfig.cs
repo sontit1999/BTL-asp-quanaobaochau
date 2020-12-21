@@ -16,7 +16,15 @@ namespace BTL_asp_quanaobaochau
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                namespaces: new string[] { "BTL_asp_quanaobaochau.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "Nam",
+                url: "Nam/{action}/{id}",
+                defaults: new { controller = "Nam", action = "Index", id = UrlParameter.Optional }
+                //namespaces: new string[] { "BTL_asp_quanaobaochau.Controllers" }
             );
         }
     }
