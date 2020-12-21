@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -55,6 +61,8 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -139,6 +147,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataBaseContext.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\GioHang.cs" />
+    <Compile Include="Models\ModelDataContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDataContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelDataContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelDataContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDataContext.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -152,6 +176,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\ModelDataContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelDataContext.Context.cs</LastGenOutput>
+      <DependentUpon>ModelDataContext.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ModelDataContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelDataContext.edmx</DependentUpon>
+      <LastGenOutput>ModelDataContext.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Models\DataBaseContext.dbml">
@@ -162,6 +196,13 @@
     <None Include="Models\DataBaseContext.dbml.layout">
       <DependentUpon>DataBaseContext.dbml</DependentUpon>
     </None>
+    <EntityDeploy Include="Models\ModelDataContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelDataContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelDataContext.edmx.diagram">
+      <DependentUpon>ModelDataContext.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -197,12 +238,14 @@
     <Content Include="Views\Son\editProduct.cshtml" />
     <Content Include="Views\Son\ViewDetailsProduct.cshtml" />
     <Content Include="Views\Son\SearchProduct.cshtml" />
+    <Content Include="Views\Nghia\Index.cshtml" />
+    <Content Include="Views\Nghia\NhapThongTinDatHang.cshtml" />
+    <Content Include="Views\Nghia\giohang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
     <Folder Include="Views\Nam\" />
-    <Folder Include="Views\Nghia\" />
     <Folder Include="Views\Quyen\" />
   </ItemGroup>
   <ItemGroup>
@@ -220,6 +263,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

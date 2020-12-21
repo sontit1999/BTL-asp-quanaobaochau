@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="86733b863bbb4482a9c4ed0babb55e17" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanAoBaoChauModel.ChiTietDonHang" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanAoBaoChauModel.DonHang" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanAoBaoChauModel.HinhAnh" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanAoBaoChauModel.LoaiSanPham" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanAoBaoChauModel.SanPham" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanAoBaoChauModel.TinTuc" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="QuanAoBaoChauModel.FK__ChiTietDo__MaDon__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanAoBaoChauModel.FK__ChiTietDo__MaSan__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanAoBaoChauModel.FK__HinhAnh__MaSanPh__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanAoBaoChauModel.FK__SanPham__MaLoaiS__4D94879B" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

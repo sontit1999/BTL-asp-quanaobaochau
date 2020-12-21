@@ -48,10 +48,13 @@ namespace BTL_asp_quanaobaochau.Models
     partial void InsertTinTuc(TinTuc instance);
     partial void UpdateTinTuc(TinTuc instance);
     partial void DeleteTinTuc(TinTuc instance);
+    partial void InsertTinTuc1(TinTuc1 instance);
+    partial void UpdateTinTuc1(TinTuc1 instance);
+    partial void DeleteTinTuc1(TinTuc1 instance);
     #endregion
 		
 		public DataBaseContextDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QuanAoBaoChauConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QuanAoBaoChauConnectionString1"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -125,6 +128,14 @@ namespace BTL_asp_quanaobaochau.Models
 			get
 			{
 				return this.GetTable<TinTuc>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TinTuc1> TinTuc1s
+		{
+			get
+			{
+				return this.GetTable<TinTuc1>();
 			}
 		}
 	}
@@ -1248,6 +1259,140 @@ namespace BTL_asp_quanaobaochau.Models
     #endregion
 		
 		public TinTuc()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTinTuc", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaTinTuc
+		{
+			get
+			{
+				return this._MaTinTuc;
+			}
+			set
+			{
+				if ((this._MaTinTuc != value))
+				{
+					this.OnMaTinTucChanging(value);
+					this.SendPropertyChanging();
+					this._MaTinTuc = value;
+					this.SendPropertyChanged("MaTinTuc");
+					this.OnMaTinTucChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TieuDe", DbType="NVarChar(300) NOT NULL", CanBeNull=false)]
+		public string TieuDe
+		{
+			get
+			{
+				return this._TieuDe;
+			}
+			set
+			{
+				if ((this._TieuDe != value))
+				{
+					this.OnTieuDeChanging(value);
+					this.SendPropertyChanging();
+					this._TieuDe = value;
+					this.SendPropertyChanged("TieuDe");
+					this.OnTieuDeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NoiDung", DbType="NText NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string NoiDung
+		{
+			get
+			{
+				return this._NoiDung;
+			}
+			set
+			{
+				if ((this._NoiDung != value))
+				{
+					this.OnNoiDungChanging(value);
+					this.SendPropertyChanging();
+					this._NoiDung = value;
+					this.SendPropertyChanged("NoiDung");
+					this.OnNoiDungChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LinkAnh", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string LinkAnh
+		{
+			get
+			{
+				return this._LinkAnh;
+			}
+			set
+			{
+				if ((this._LinkAnh != value))
+				{
+					this.OnLinkAnhChanging(value);
+					this.SendPropertyChanging();
+					this._LinkAnh = value;
+					this.SendPropertyChanged("LinkAnh");
+					this.OnLinkAnhChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TinTuc")]
+	public partial class TinTuc1 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaTinTuc;
+		
+		private string _TieuDe;
+		
+		private string _NoiDung;
+		
+		private string _LinkAnh;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaTinTucChanging(int value);
+    partial void OnMaTinTucChanged();
+    partial void OnTieuDeChanging(string value);
+    partial void OnTieuDeChanged();
+    partial void OnNoiDungChanging(string value);
+    partial void OnNoiDungChanged();
+    partial void OnLinkAnhChanging(string value);
+    partial void OnLinkAnhChanged();
+    #endregion
+		
+		public TinTuc1()
 		{
 			OnCreated();
 		}
