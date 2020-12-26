@@ -208,6 +208,7 @@
     <Content Include="Views\Nam\Login.cshtml" />
     <Content Include="Views\Nam\QuanAoBeTrai.cshtml" />
     <Content Include="Views\Nam\ThoiTrangBeGai.cshtml" />
+    <Content Include="Views\Nam\ThongKe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
