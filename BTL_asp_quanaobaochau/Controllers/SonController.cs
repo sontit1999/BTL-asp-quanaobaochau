@@ -19,6 +19,7 @@ namespace BTL_asp_quanaobaochau.Controllers
             sp.Reverse();
             return View(sp);
         }
+
         public ActionResult SearchProduct(string key)
         {
             var sp = db.SanPhams.Where(p => p.TinhTrang == 1)
@@ -144,10 +145,16 @@ namespace BTL_asp_quanaobaochau.Controllers
                 var spcansua = db.SanPhams.Where(p => p.MaSanPham == sp.MaSanPham).First();
                 if (file != null && file.ContentLength > 0)
                 {
-                    var fileName = System.IO.Path.GetFileName(file.FileName);
-                    var path = Server.MapPath("~/Images/" + fileName);
-                    file.SaveAs(path);
-                    spcansua.LinkAnh = "Images/" + fileName;
+                    try
+                    {
+                        var fileName = System.IO.Path.GetFileName(file.FileName);
+                        var path = Server.MapPath("~/Images/" + fileName);
+                        file.SaveAs(path);
+                        spcansua.LinkAnh = "Images/" + fileName;
+                    }
+                    catch (Exception) { 
+                    }
+                    
                 }
                 spcansua.TenSanPham = sp.TenSanPham;
                 spcansua.MoTa = sp.MoTa;
