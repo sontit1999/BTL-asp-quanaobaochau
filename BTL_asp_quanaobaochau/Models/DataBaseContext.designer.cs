@@ -1233,6 +1233,8 @@ namespace BTL_asp_quanaobaochau.Models
 		
 		private string _LinkAnh;
 		
+		private System.DateTime _timenews;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1245,6 +1247,8 @@ namespace BTL_asp_quanaobaochau.Models
     partial void OnNoiDungChanged();
     partial void OnLinkAnhChanging(string value);
     partial void OnLinkAnhChanged();
+    partial void OntimenewsChanging(System.DateTime value);
+    partial void OntimenewsChanged();
     #endregion
 		
 		public TinTuc()
@@ -1328,6 +1332,26 @@ namespace BTL_asp_quanaobaochau.Models
 					this._LinkAnh = value;
 					this.SendPropertyChanged("LinkAnh");
 					this.OnLinkAnhChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_timenews", DbType="DateTime NOT NULL")]
+		public System.DateTime timenews
+		{
+			get
+			{
+				return this._timenews;
+			}
+			set
+			{
+				if ((this._timenews != value))
+				{
+					this.OntimenewsChanging(value);
+					this.SendPropertyChanging();
+					this._timenews = value;
+					this.SendPropertyChanged("timenews");
+					this.OntimenewsChanged();
 				}
 			}
 		}

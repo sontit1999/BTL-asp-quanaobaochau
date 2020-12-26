@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "AddNews";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Thêm tin tức</h2>
+<div class="row ">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <form action="/Quyen/AddNews" method="post" enctype="multipart/form-data">
+
+            <div>
+                <div>
+                    <label>Tiêu đề : <span style="color:red;font-size:10px">@ViewData["tieude"]</span> </label>
+                    <input type="text" name="TieuDe" class="form-control" id="inputAddress" placeholder="">
+                </div>
+                <div>
+                    <label>Nội dung: <span style="color:red;font-size:10px">@ViewData["mota"]</span></label>
+                    <input type="text" name="NoiDung" class="form-control" id="inputAddress" placeholder="">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Chọn ảnh<span style="color:red;font-size:10px">@ViewData["anh"]</span> </label>
+                    <input type="file" name="file" id="file" />
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Thêm tin</button>
+            <button type="button" class="btn btn-outline-danger">@Html.ActionLink("Quay lại", "Index")</button>
+        </form>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+

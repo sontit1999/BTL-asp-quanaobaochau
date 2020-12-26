@@ -81,6 +81,39 @@
         .mySlides {
             display: none;
         }
+        .parallax {
+          /* The image used */
+      
+          /* Full height */
+          height: 100%;
+          /* Create the parallax scrolling effect */
+          background-attachment: fixed;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        #imgs111 {
+            float: left;
+        }
+        #text123 {
+            margin-top: 100px;
+            font-style: italic;
+            font-size: smaller;
+            padding: 20px;
+        }
+        .responsive {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+        }
+/* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
+        @@media only screen and (max-device-width: 1366px) {
+          .parallax {
+            background-attachment: scroll;
+          }
+        }
+
+
     </style>
 </head>
 <body topmargin="0" bottommargin="0" rightmargin="0" leftmargin="0">
@@ -113,14 +146,16 @@
                                                 <u class=menu_center><b></b></u>                                             
                                                 <li>@Html.ActionLink("Đặt hàng", "DatHang", "Home")</li>
                                                 <u class=menu_center><b></b></u>
-                                                <li>@Html.ActionLink("Thời Trang Bé Trai", "About", "Home")</li>
+                                                <li>@Html.ActionLink("Thời Trang Bé Trai", "QuanAoBeTrai", "Nam")</li>
                                                 <u class=menu_center><b></b></u>
-                                                <li>@Html.ActionLink("Thời Trang Bé Gái", "Contact", "Home")</li>
+                                                <li>@Html.ActionLink("Thời Trang Bé Gái", "ThoiTrangBeGai", "Nam")</li>
                                                 <u class=menu_center><b></b></u>
-                                                <li>@Html.ActionLink("Quần áo quảng châu", "Index", "Home")</li>
+                                                <li>
+                                                    <a href="/Nam/SanPham?id=12">Quần áo quảng châu</a>
+                                                
                                                 <u class=menu_center><b></b></u>
                                                
-                                                <li>@Html.ActionLink("Tin tức", "Index", "Home")</li>
+                                                <li>@Html.ActionLink("Tin tức", "Index", "Quyen")</li>
                                                 <u class=menu_center><b></b></u>
                                                 <li>@Html.ActionLink("Quản Lý Sản Phẩm", "Index", "Son")</li>
                                                 <u class=menu_center><b></b></u>
@@ -171,25 +206,25 @@
                             </table>
                             <table class="block_1_top" cellspacing=0 cellpadding=0 width="100%" border=0>
                                 <tr>
-                                    <td valign="middle" class="tab_8_8 block_1_title"><a href="quan-ao-be-trai-vn-12-0.html">Thời Trang Bé Trai</a></td>
+                                    <td valign="middle" class="tab_8_8 block_1_title"><a href="/Nam/QuanAoBeTrai">Thời Trang Bé Trai</a></td>
                                 </tr>
                                 <tr>
                                     <td valign="middle" class="block_1_center">
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="quan-ao-be-trai/ao-be-trai-vn-b-139-0.html">Áo bé trai</a></td>
+                                                <td valign="middle" class="menu_s"><a href="/Nam/SanPham?id=2">Áo bé trai</a></td>
                                             </tr>
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="quan-ao-be-trai/quan-be-trai-vn-b-140-0.html">Quần bé trai</a></td>
+                                                <td valign="middle" class="menu_s"><a href="/Nam/SanPham?id=3">Quần bé trai</a></td>
                                             </tr>
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="quan-ao-be-trai/do-bo-be-trai-vn-b-141-0.html">Đồ bộ bé trai</a></td>
+                                                <td valign="middle" class="menu_s"><a href="/Nam/SanPham?id=4">Đồ bộ bé trai</a></td>
                                             </tr>
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="quan-ao-be-trai/yem-be-trai-be-gai-vn-b-158-0.html">Yếm Bé Trai, Bé Gái</a></td>
+                                                <td valign="middle" class="menu_s"><a href="/Nam/SanPham?id=5">Yếm Bé Trai, Bé Gái</a></td>
                                             </tr>
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="quan-ao-be-trai/quan-ao-bong-da-tre-em-vn-b-163-0.html">Quần Áo Bóng Đá Trẻ Em</a></td>
+                                                <td valign="middle" class="menu_s"><a href="/Nam/SanPham?id=6">Quần Áo Bóng Đá Trẻ Em</a></td>
                                             </tr>
                                         </table>
                                     </td>
@@ -202,25 +237,25 @@
                             </table>
                             <table class="block_1_top" cellspacing=0 cellpadding=0 width="100%" border=0>
                                 <tr>
-                                    <td valign="middle" class="tab_8_8 block_1_title"><a href="quan-ao-be-gai-vn-32-0.html">Thời trang bé gái</a></td>
+                                    <td valign="middle" class="tab_8_8 block_1_title"><a href="/Nam/ThoiTrangBeGai">Thời trang bé gái</a></td>
                                 </tr>
                                 <tr>
                                     <td valign="middle" class="block_1_center">
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="quan-ao-be-gai/ao-be-gai-vn-b-143-0.html">Áo bé gái</a></td>
+                                                <td valign="middle" class="menu_s"><a href="/Nam/SanPham?id=7">Áo bé gái</a></td>
                                             </tr>
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="quan-ao-be-gai/quan-be-gai-vn-b-144-0.html">Quần bé gái</a></td>
+                                                <td valign="middle" class="menu_s"><a href="/Nam/SanPham?id=8">Quần bé gái</a></td>
                                             </tr>
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="quan-ao-be-gai/dam-vn-b-153-0.html">Đầm</a></td>
+                                                <td valign="middle" class="menu_s"><a href="/Nam/SanPham?id=9">Đầm</a></td>
                                             </tr>
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="quan-ao-be-gai/do-bo-be-gai-vn-b-146-0.html">Đồ bộ bé gái</a></td>
+                                                <td valign="middle" class="menu_s"><a href="/Nam/SanPham?id=10">Đồ bộ bé gái</a></td>
                                             </tr>
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="quan-ao-be-gai/quan-di-bien-du-lich-be-trai-be-gai-vn-b-159-0.html">Quần Đi Biển, Du Lịch Bé Trai, Bé Gái</a></td>
+                                                <td valign="middle" class="menu_s"><a href="/Nam/SanPham?id=11">Quần Đi Biển, Du Lịch Bé Trai, Bé Gái</a></td>
                                             </tr>
                                         </table>
                                     </td>
@@ -233,13 +268,13 @@
                             </table>
                             <table class="block_1_top" cellspacing=0 cellpadding=0 width="100%" border=0>
                                 <tr>
-                                    <td valign="middle" class="tab_8_8 block_1_title"><a href="quan-ao-quang-chau-vn-38-0.html">Quần áo Quảng Châu</a></td>
+                                    <td valign="middle" class="tab_8_8 block_1_title"><a href="/Nam/SanPham?id=12">Quần áo Quảng Châu</a></td>
                                 </tr>
                                 <tr>
                                     <td valign="middle" class="block_1_center">
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="quan-ao-quang-chau/quan-ao-tre-em-quang-chau-vn-b-184-0.html">Quần áo trẻ em Quảng Châu</a></td>
+                                                <td valign="middle" class="menu_s"><a href="/Nam/SanPham?id=12">Quần áo trẻ em Quảng Châu</a></td>
                                             </tr>
                                         </table>
                                     </td>
@@ -252,13 +287,13 @@
                             </table>
                             <table class="block_1_top" cellspacing=0 cellpadding=0 width="100%" border=0>
                                 <tr>
-                                    <td valign="middle" class="tab_8_8 block_1_title"><a href="quan-ao-gia-si-vn-37-0.html">Quần áo giá sỉ</a></td>
+                                    <td valign="middle" class="tab_8_8 block_1_title"><a href="/Nam/ThoiTrangBeGai">Quần áo giá sỉ</a></td>
                                 </tr>
                                 <tr>
                                     <td valign="middle" class="block_1_center">
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="quan-ao-gia-si/quan-jean-nu-vn-b-181-0.html">Quần jean nữ</a></td>
+                                                <td valign="middle" class="menu_s"><a href="/Nam/ThoiTrangBeGai">Quần jean nữ</a></td>
                                             </tr>
                                         </table>
                                     </td>
@@ -271,25 +306,25 @@
                             </table>
                             <table class="block_1_top" cellspacing=0 cellpadding=0 width="100%" border=0>
                                 <tr>
-                                    <td valign="middle" class="tab_8_8 block_1_title"><a href="kinh-nghiem-quan-ao-tre-em-vn-35-0.html">Kinh nghiệm</a></td>
+                                    <td valign="middle" class="tab_8_8 block_1_title"><a href="/Quyen/Index">Kinh nghiệm</a></td>
                                 </tr>
                                 <tr>
                                     <td valign="middle" class="block_1_center">
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="kinh-nghiem-quan-ao-tre-em/chon-cac-loai-vai-vn-b-173-0.html">Chọn các loại Vải</a></td>
+                                                <td valign="middle" class="menu_s"><a href="/Quyen/Index">Chọn các loại Vải</a></td>
                                             </tr>
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="kinh-nghiem-quan-ao-tre-em/mo-shop-can-biet-vn-b-174-0.html">Mở Shop Cần Biết</a></td>
+                                                <td valign="middle" class="menu_s"><a href="/Quyen/Index">Mở Shop Cần Biết</a></td>
                                             </tr>
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="kinh-nghiem-quan-ao-tre-em/tin-thoi-trang-vn-b-182-0.html">Tin Thời Trang</a></td>
+                                                <td valign="middle" class="menu_s"><a href="/Quyen/Index">Tin Thời Trang</a></td>
                                             </tr>
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="kinh-nghiem-quan-ao-tre-em/goc-kinh-nghiem-vn-b-179-0.html">Góc kinh nghiệm</a></td>
+                                                <td valign="middle" class="menu_s"><a href="/Quyen/Index">Góc kinh nghiệm</a></td>
                                             </tr>
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="kinh-nghiem-quan-ao-tre-em/dai-ly-gia-si-vn-b-183-0.html">Đại lý giá sỉ</a></td>
+                                                <td valign="middle" class="menu_s"><a href="/Quyen/Index">Đại lý giá sỉ</a></td>
                                             </tr>
                                         </table>
                                     </td>
@@ -302,13 +337,13 @@
                             </table>
                             <table class="block_1_top" cellspacing=0 cellpadding=0 width="100%" border=0>
                                 <tr>
-                                    <td valign="middle" class="tab_8_8 block_1_title"><a href="quan-ao-tre-em-xuat-khau-vn-30-0.html">Sản Phẩm Khác</a></td>
+                                    <td valign="middle" class="tab_8_8 block_1_title"><a href="/Home/Index">Sản Phẩm Khác</a></td>
                                 </tr>
                                 <tr>
                                     <td valign="middle" class="block_1_center">
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                             <tr>
-                                                <td valign="middle" class="menu_s"><a href="quan-ao-tre-em-xuat-khau/tin-trong-nganh-vn-b-156-0.html">Tin Trong Ngành</a></td>
+                                                <td valign="middle" class="menu_s"><a href="/Quyen/Index">Tin Trong Ngành</a></td>
                                             </tr>
                                         </table>
                                     </td>
@@ -366,7 +401,7 @@
                             <table width="100%" border="0" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td valign="top" style="padding-right: 8px;">
-                                        @RenderBody();
+                                        @RenderBody()
                                     </td>
 
                                     <!-- bđ đoạn này  -->

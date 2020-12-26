@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h2 style="color=blue">Tin tức</h2>
+    @foreach (var item in Model)
+    {
+        <div>
+            <table style="  width: 100%;
+       margin: 10px 0px;">
+                <tr>
+                    <td width="150px" rowspan="2"><a href="/Quyen/DetailsNew?id= @item.MaTinTuc"><img style="object-fit:cover; display: block; width: 100px; height:100px;" src="/@item.LinkAnh" /></a></td>
+                    <td><b><a style="font-size=18; color=Blue" href="/Quyen/DetailsNew?id= @item.MaTinTuc">@item.TieuDe</a></b></td>
+                </tr>
+                <tr>
+                    <td>
+                        <h6 style="font-size:10px;"><i>@item.timenews</i></h6>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <hr />
+    }
+</div>
+

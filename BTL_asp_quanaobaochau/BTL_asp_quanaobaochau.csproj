@@ -198,13 +198,21 @@
     <Content Include="Views\Son\ViewDetailsProduct.cshtml" />
     <Content Include="Views\Son\SearchProduct.cshtml" />
     <Content Include="Views\Home\ChitietTT.cshtml" />
+    <Content Include="Views\Quyen\Index.cshtml" />
+    <Content Include="Views\Quyen\DetailsNew.cshtml" />
+    <Content Include="Views\Quyen\Quanlytin.cshtml" />
+    <Content Include="Views\Quyen\AddNews.cshtml" />
+    <Content Include="Views\Quyen\EditNews.cshtml" />
+    <Content Include="Views\Nam\SanPham.cshtml" />
+    <Content Include="Views\Nam\ChiTietSanPham.cshtml" />
+    <Content Include="Views\Nam\Login.cshtml" />
+    <Content Include="Views\Nam\QuanAoBeTrai.cshtml" />
+    <Content Include="Views\Nam\ThoiTrangBeGai.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
-    <Folder Include="Views\Nam\" />
     <Folder Include="Views\Nghia\" />
-    <Folder Include="Views\Quyen\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

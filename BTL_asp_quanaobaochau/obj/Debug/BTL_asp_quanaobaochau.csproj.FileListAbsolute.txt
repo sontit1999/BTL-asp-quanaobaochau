@@ -151,8 +151,8 @@ G:\Project C#\BTL_ASP\BTL-asp-quanaobaochau\BTL_asp_quanaobaochau\bin\System.Web
 G:\Project C#\BTL_ASP\BTL-asp-quanaobaochau\BTL_asp_quanaobaochau\bin\Newtonsoft.Json.xml
 G:\Project C#\BTL_ASP\BTL-asp-quanaobaochau\BTL_asp_quanaobaochau\bin\Antlr3.Runtime.pdb
 G:\Project C#\BTL_ASP\BTL-asp-quanaobaochau\BTL_asp_quanaobaochau\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-G:\Project C#\BTL_ASP\BTL-asp-quanaobaochau\BTL_asp_quanaobaochau\obj\Debug\BTL_asp_quanaobaochau.csprojAssemblyReference.cache
 G:\Project C#\BTL_ASP\BTL-asp-quanaobaochau\BTL_asp_quanaobaochau\obj\Debug\BTL_asp_quanaobaochau.csproj.CoreCompileInputs.cache
 G:\Project C#\BTL_ASP\BTL-asp-quanaobaochau\BTL_asp_quanaobaochau\obj\Debug\BTL_asp_quanaobaochau.csproj.CopyComplete
 G:\Project C#\BTL_ASP\BTL-asp-quanaobaochau\BTL_asp_quanaobaochau\obj\Debug\BTL_asp_quanaobaochau.dll
 G:\Project C#\BTL_ASP\BTL-asp-quanaobaochau\BTL_asp_quanaobaochau\obj\Debug\BTL_asp_quanaobaochau.pdb
+G:\Project C#\BTL_ASP\BTL-asp-quanaobaochau\BTL_asp_quanaobaochau\obj\Debug\BTL_asp_quanaobaochau.csprojAssemblyReference.cache
