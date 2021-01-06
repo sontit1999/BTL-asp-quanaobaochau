@@ -2,35 +2,356 @@
 @{
     ViewBag.Title = "ChiTietSanPham";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var listsp = ViewBag.listsp;
+    var listimg = ViewBag.listimg;
 }
 
-    <div>
-        <div>
-            <div id="imgs111" class=" card m-2 col-md-3 text-center">
-                <img class="card-img-top" style="object-fit:cover; margin-left: auto; margin-right: auto; display: block; width: 100%; height: 200px" src="/@Model.LinkAnh" alt="Card image cap">
 
-                <div class="card-body">
-                    <p><input type="text" class="form-control" placeholder="1" aria-label="" aria-describedby="basic-addon1"><a href="#" style="background-color: deeppink !important;" class="mt-1 btn btn-danger">Mua ngay</a></p>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body, html {
+          height: 100%;
+        }
+
+        .parallax {
+          /* The image used */
+          background-image: url('@Model.LinkAnh');
+
+          /* Full height */
+          height: 100%;
+          /* Create the parallax scrolling effect */
+          background-attachment: fixed;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        #imgs111 {
+            float: left;
+        }
+        #text123 {
+            margin-top: 100px;
+            font-style: italic;
+            font-size: smaller;
+            padding: 20px;
+        }
+
+        .responsive {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+        }
+
+/* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
+        @@media only screen and (max-device-width: 1366px) {
+          .parallax {
+            background-attachment: scroll;
+          }
+        }
+
+        @@media (min-width: 768px) {
+            #img-col {
+                max-width: 20%;
+            }
+        }
+
+        #btn-bot {
+            font-size: 0.5rem;
+        }
+
+        
+
+        .row > .column {
+            padding: 0 8px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .column {
+            float: left;
+            width: 25%;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: black;
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        /* The Close Button */
+        .close {
+            color: white;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: #999;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+        .mySlides {
+            display: none;
+        }
+
+        .cursor {
+            cursor: pointer;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover,
+            .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #1d2129;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        img {
+            margin-bottom: -4px;
+        }
+
+        .caption-container {
+            text-align: center;
+            background-color: black;
+            padding: 2px 16px;
+            color: white;
+        }
+
+        .demo {
+            opacity: 0.6;
+        }
+
+            .active,
+            .demo:hover {
+                opacity: 1;
+            }
+
+        img.hover-shadow {
+            transition: 0.3s;
+        }
+
+        .hover-shadow:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        /*
+            end
+        */
+        .input-group .form-control {
+            z-index: 0;
+        }
+        .input-group-append .btn, .input-group-prepend .btn {
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="imgs111" class=" card m-2 col-md-3 text-center">
+        <img id="myImg" onclick="openModal();currentSlide(1)" class="hover-shadow cursor card-img-top" style=" margin-left: auto; margin-right: auto; display: block; height: auto" src="@Model.LinkAnh" alt="Card image cap">
+        @*<div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+        </div>*@
+        <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+                @foreach (var item in listimg)
+                {
+                    <div class="mySlides">
+                        <img src="@item.LinkAnh" style="width:50%">
+                    </div>
+                }
+                @*<div class="mySlides">
+                    <div class="numbertext">1 / 4</div>
+                    <img src="@Model.LinkAnh" style="width:50%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">2 / 4</div>
+                    <img src="@Model.LinkAnh" style="width:50%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">3 / 4</div>
+                    <img src="@Model.LinkAnh" style="width:50%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">4 / 4</div>
+                    <img src="@Model.LinkAnh" style="width:50%">
+                </div>*@
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <div class="caption-container">
+                    <p id="caption"></p>
                 </div>
             </div>
-            <fieldset id="field111">
-                <legend>Chi tiết sản phẩm</legend>
-                <div class="display-label">Mã sản Phẩm: @Model.MaSanPham</div>
-                <div class="display-label">Tên Sản phẩm:@Model.TenSanPham</div>
-                <div class="display-label">Giá: @Model.Gia</div>
-                <div class="display-label">Số lượng còn: @Model.SoLuongCon</div>
-                <div class="display-label">Xuất xứ: @Model.XuatXu</div>
-                <div class="display-label">Hãng: @Model.Hang</div>
-                <div class="display-label">Tình trạng: Có hàng</div>
-            </fieldset>
+        </div>
+        <div class="card-body">
+            <p><input type="text" class="form-control" placeholder="1" aria-label="" aria-describedby="basic-addon1"><a href="#" style="background-color: deeppink !important;" class="mt-1 btn btn-danger">Mua ngay</a></p>
         </div>
     </div>
-<div class="parallax"></div>
+    <fieldset id="field111">
+        <legend>Chi tiết sản phẩm</legend>
+        <div class="display-label">Mã sản Phẩm: @Model.MaSanPham</div>
+        <div style="color: #1a662b; font-weight: bold;" class="display-label">Tên Sản phẩm:@Model.TenSanPham</div>
+        <div class="display-label">Giá: @Model.Gia</div>
+        <div class="display-label">Số lượng còn: @Model.SoLuongCon</div>
+        <div class="display-label">Xuất xứ: @Model.XuatXu</div>
+        <div class="display-label">Hãng: @Model.Hang</div>
+        <div class="display-label">Tình trạng: Có hàng</div>
+    </fieldset>
+    <div class="parallax">
+        <h3 style="color: bisque; font-size: xx-large;background: mediumvioletred;">Thông tin sản phẩm</h3>
 
-<div id="text123" style="margin-top:20px; font-size:16px">
-    <div class="display-label">@Model.MoTa</div>
-    <hr />
-    <img src="/@Model.LinkAnh" alt="Nature" class="responsive" width="600" height="400">
-</div>
-<div class="parallax"></div>
+        <div id="text123" style="height:auto;color: antiquewhite;background: linear-gradient(100deg, black, transparent);font-size:36px">
+            <div class="display-label">@Model.MoTa</div>
+            <hr />
+            <img src="@Model.LinkAnh" alt="Nature" class="responsive" width="600" height="400">
+        </div>
+    </div>
+    <div>
+        <h3 style=" font-weight: bold; color: darkmagenta;">Sản phẩm cùng loại</h3>
+    </div>
+    <div class="bot">
+        <div class="row justify-content-center">
+            @foreach (var item in listsp)
+            {
+                <div id="img-col" class=" card m-2 col-md-3 text-center">
+                    <a href="/Nam/ChiTietSanPham?id= @item.MaSanPham"><img class="card-img-top" style="object-fit:cover; margin-left: auto; margin-right: auto; display: block; width: 100%; height: auto" src="@item.LinkAnh" alt="Card image cap"></a>
+
+
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-size:x-small;"><a href="/Nam/ChiTietSanPham?id= @item.MaSanPham">@item.TenSanPham</a></h5>
+                        <p class="card-text redtext" style="font-size:13px;">@item.Gia VND</p>
+                        <p><input type="text" class="form-control" placeholder="1" aria-label="" aria-describedby="basic-addon1"><a id="btn-bot" href="#" style="background-color: deeppink !important;" class="mt-1 btn btn-danger">Mua ngay</a></p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("myImg");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+</script>
+<script>
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        captionText.innerHTML = dots[slideIndex - 1].alt;
+    }
+</script>
+
+
 

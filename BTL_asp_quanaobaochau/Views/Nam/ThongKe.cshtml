@@ -3,6 +3,68 @@
     ViewBag.Title = "ThongKe";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script>
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Loại sản phẩm', 'doanh thu'],
+                ['Áo bé trai', @ViewBag.lsp1],
+                ['Quần bé trai', @ViewBag.lsp2],
+                ['Đồ bộ bé trai', @ViewBag.lsp3],
+                ['Yếm bé trai và bé gái', @ViewBag.lsp4],
+                ['Quần áo bóng đá trẻ em', @ViewBag.lsp5],
+                ['Áo bé gái', @ViewBag.lsp6],
+                ['Quần bé gái', @ViewBag.lsp7],
+                ['Đầm', @ViewBag.lsp8],
+                ['Đồ bộ bé gái', @ViewBag.lsp9],
+                ['Quần đi biển và du lịch bé trai gái', @ViewBag.lsp10],
+                ['Quần áo quảng châu', @ViewBag.lsp11],
+                ['Quần jean nữ', @ViewBag.lsp12]
+            ]);
+
+            var options = {
+                title: 'Doanh thu từng loại sản phẩm trong ngày @ViewBag.date - @ViewBag.deFault'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+        }
+    </script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['bar'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Tháng', 'Doanh thu'],
+                ['9', @ViewBag.thang9],
+                ['10', @ViewBag.thang10],
+                ['11', @ViewBag.thang11],
+                ['12', @ViewBag.thang12]
+
+            ]);
+
+            var options = {
+                chart: {
+                    title: 'Doanh thu bốn tháng gần nhất',
+                }
+            };
+
+            var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+            chart.draw(data, google.charts.Bar.convertOptions(options));
+        }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         .container {
             position: relative;
@@ -50,28 +112,90 @@
             transform: translate(-50%, -50%);
             text-align: center;
         }
+
+        .body-chart {
+            padding-top: 25px;
+        }
+
+        .mid {
+            padding-left: 800px;
+        }
+
+        #left-chart {
+            float: left;
+            padding-left: 30px;
+        }
+
+        #right-chart {
+            float: right;
+        }
+
+        #form-date {
+            margin-left: 950px;
+            margin-top: 200px;
+        }
     </style>
-</style>
-<h2 align="center">Trang thống kê</h2>
+</head>
+<body>
+    <div class="top">
+        <div class="container">
+            <div class="fontText">Ngày có tổng doanh thu lớn nhất</div>
+            <div class="overlay">
+                <div class="text"><p>Ngày: @ViewBag.TopNgay</p><p>Tổng giá trị: @ViewBag.tongDT</p></div>
+            </div>
+        </div>
 
-<div class="container">
-    <div class="fontText">Tổng số lượt người truy cập Web</div>
-    <div class="overlay">
-        <div class="text">13</div>
+        <div class="container">
+            <div class="fontText">Đơn hàng có giá trị cao nhất</div>
+            <div class="overlay">
+                <div class="text"><p>Mã đơn hàng: @ViewBag.maDH</p><p>Tổng giá trị: @ViewBag.tongDT</p></div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="fontText">Sản phẩm bán chạy nhất</div>
+            <div class="overlay">
+                <div class="text"><p>Mã sản phẩm: @ViewBag.masp</p><p>Tổng số lượng: @ViewBag.sl</p></div>
+            </div>
+        </div>
     </div>
-</div>
-
-<div class="container">
-    <div class="fontText">Số lượt người đang truy cập Web</div>
-    <div class="overlay">
-        <div class="text">20</div>
+    <div id="mid">
+        <form id="form-date" action="/Nam/ThongKe" method="post">
+            <label for="daytime">Chọn ngày:</label>
+            <input type="date" id="dateDefault" name="dateT" />
+            <input type="submit" value="Chọn" />
+        </form>
     </div>
-</div>
-
-<div class="container">
-    <div class="fontText">Sản phẩm bán chạy nhất</div>
-    <div class="overlay">
-        <div class="text">Tên sản phẩm</div>
+    <div class="body-chart">
+        <div id="left-chart">
+            <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+        </div>
+        <div id="right-chart">
+            <div id="piechart" style="width: 600px; height: 500px;"></div>
+        </div>
     </div>
-</div>
+</body>
+</html>
+@*<script>
+    function setInputDate(_id) {
+        var _dat = document.querySelector(_id);
+        //var hoy = new Date(),
+        //    d = hoy.getDate(),
+        //    m = hoy.getMonth() + 1,
+        //    y = hoy.getFullYear(),
+        //    data;
 
+        //if (d < 10) {
+        //    d = "0" + d;
+        //};
+        //if (m < 10) {
+        //    m = "0" + m;
+        //};
+
+        //data = y + "-" + m + "-" + d;
+        data = @ViewBag.test;
+        _dat.value = data;
+    };
+
+    setInputDate("#dateDefault");
+</script>*@
