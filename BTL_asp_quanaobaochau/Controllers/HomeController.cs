@@ -12,7 +12,7 @@ namespace BTL_asp_quanaobaochau.Controllers
         DataBaseContextDataContext db = new DataBaseContextDataContext();
         public ActionResult Index()
         {
-            var sp = db.SanPhams.ToList();
+            var sp = db.SanPhams.Where(p => p.TinhTrang == 1).ToList();
             // comment test to Lê nam
             var listNew = (from tt in db.TinTucs
                            select tt).ToList();

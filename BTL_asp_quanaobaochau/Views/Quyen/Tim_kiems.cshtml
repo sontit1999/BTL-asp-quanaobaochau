@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Tim_kiems";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2 style="text-align:center">Tìm kiếm sản phẩm</h2>
+<form action="/Quyen/Tim_kiem" method="post">
+    <div>
+        <h4>Giá từ : <input id="giathap" name="giathap" type="number" /> đến : <input id="giacao" name="giacao" type="number" /> </h4>
+
+    </div>
+    <div>
+        <h4> Tên sản phẩm: <input id="TenSp" name="TenSp" type="text" /> </h4>
+    </div>
+    <div style="align-content:center">
+        <input type="submit" value="Tìm kiếm" style="background-color: deeppink !important;margin-left: 11px !important" class=" mt-1 btn btn-danger" />
+    </div>
+
+</form>
+

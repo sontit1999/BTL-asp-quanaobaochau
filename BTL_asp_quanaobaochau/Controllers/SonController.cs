@@ -87,7 +87,8 @@ namespace BTL_asp_quanaobaochau.Controllers
         {
              int idsp = Convert.ToInt32(id);
              var item = db.SanPhams.Where(m => m.MaSanPham == idsp).First();
-             db.SanPhams.DeleteOnSubmit(item);
+             item.TinhTrang = 0;
+             UpdateModel(item);
              db.SubmitChanges();
              return RedirectToAction("Index");
         

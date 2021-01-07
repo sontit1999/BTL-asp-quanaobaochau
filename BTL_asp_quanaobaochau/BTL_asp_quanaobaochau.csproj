@@ -213,6 +213,8 @@
     <Content Include="Views\Nam\QuanAoBeTrai.cshtml" />
     <Content Include="Views\Nam\ThoiTrangBeGai.cshtml" />
     <Content Include="Views\Nam\ThongKe.cshtml" />
+    <Content Include="Views\Quyen\Tim_kiems.cshtml" />
+    <Content Include="Views\Quyen\Tim_kiem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

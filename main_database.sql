@@ -7,8 +7,6 @@ TieuDe nvarchar(300) not null,
 NoiDung ntext not null,
 LinkAnh nvarchar(200) not null,
 )
-ALTER TABLE TinTuc
-ADD timenews DATETIME NOT NULL DEFAULT (GETDATE());
 create table LoaiSanPham (
 MaLoai int not null IDENTITY(1,1) PRIMARY KEY,
 TenLoai nvarchar(200) not null,
@@ -42,13 +40,15 @@ Email nvarchar(100) not null,
 SoDienThoai nvarchar(15) not null,
 TongTien int
 )
-alter table DonHang add NgayDat Date
 create table ChiTietDonHang(
 MaChiTietDonHang int not null IDENTITY(1,1) PRIMARY KEY,
 MaSanPham int not null references SanPham(MaSanPham) ,
-SoLuongMua nvarchar(100) not null,
-MaDonHang int not null references DonHang(MaDonHang)
+SoLuongMua int not null,
+MaDonHang int not null references DonHang(MaDonHang),
+NgayDat Date
 )
+
+
 select * from LoaiSanPham
 select * from SanPham
 select * from TinTuc
